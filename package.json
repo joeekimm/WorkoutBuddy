@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "path": "^0.12.7",
+    "sequelize": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "gulp": "^3.9.1",
+    "gulp-env": "^0.4.0",
+    "gulp-util": "^3.0.8"
+  }
+}
