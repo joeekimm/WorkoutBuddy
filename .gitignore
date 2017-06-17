@@ -58,3 +58,9 @@ typings/
 .env
 
 yarn.lock
+.idea/WorkoutBuddy.iml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/watcherTasks.xml
+
+/Client/bundle.js

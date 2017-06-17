@@ -6,9 +6,12 @@ const parser = require('body-parser');
 
 const server = express();
 
+server.use(express.static('Client'));
 
 server.listen(PORT, (err) => {
-  return err ? 
-  console.log('Error while connecting to port ', PORT) :
-  console.log('Successfully connected to port ', PORT);
-})
+  if (err) {
+    console.log(`there was an error listening on ${PORT}`);
+  } else {
+    console.log(`successfully listening on port ${PORT}`);
+  }
+});
