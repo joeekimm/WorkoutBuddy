@@ -11,4 +11,4 @@ server.listen(PORT, (err) => {
   return err ? 
   console.log('Error while connecting to port ', PORT) :
   console.log('Successfully connected to port ', PORT);
-})
+});
