@@ -6,6 +6,7 @@ const parser = require('body-parser');
 
 const server = express();
 
+server.use(express.static('Client'));
 
 server.listen(PORT, (err) => {
   if (err) {
