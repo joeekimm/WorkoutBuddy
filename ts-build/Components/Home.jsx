@@ -3,4 +3,4 @@ const Home = () => {
     return (<div>initial setup</div>);
 };
 export default Home;
-//# sourceMappingURL=App.jsx.map
+//# sourceMappingURL=Home.jsx.map

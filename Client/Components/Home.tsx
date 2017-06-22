@@ -1,9 +1,9 @@
 import  React, { Component } from 'react';
 
-const App = () => {
+const Home = () => {
   return (
     <div>initial setup</div>
   );
 }
 
-export default App ;
+export default Home ;
