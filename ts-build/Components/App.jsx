@@ -1,12 +1,6 @@
-import React, { Component } from 'react';
-class App extends Component {
-    constructor() {
-        super();
-        this.state = {};
-    }
-    render() {
-        return (<div>initial setup</div>);
-    }
-}
+import React from 'react';
+const App = () => {
+    return (<div>initial setup</div>);
+};
 export default App;
 //# sourceMappingURL=App.jsx.map
