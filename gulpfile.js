@@ -31,4 +31,4 @@ gulp.task('nodemon', () => {
   })
 })
 
-gulp.task('default', ['nodemon', 'seed']);
+gulp.task('default', ['nodemon']);
