@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { login, logout } from '../Actions/LogActions';
 import { connect } from 'react-redux';
-import Auth from '../Components/Auth';
 class Home extends Component {
     constructor(props) {
         super(props);
     }
     render() {
-        const { isAuthenticated, profile } = this.props;
+        const { login } = this.props;
         return (React.createElement("div", null,
-            React.createElement(Auth, { isAuthenticated: isAuthenticated, profile: profile, onLoginClick: this.props.login, onLogoutClick: this.props.logout })));
+            React.createElement("button", { onClick: login }, "loginbruh")));
     }
 }
 const mapStateToProps = (state) => {

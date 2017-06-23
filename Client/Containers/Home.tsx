@@ -1,7 +1,6 @@
 import  React, { Component } from 'react';
 import { login, logout } from '../Actions/LogActions';
 import { connect  } from 'react-redux';
-import Auth from '../Components/Auth';
 
 interface MyState {}
 interface MyProps {
@@ -17,15 +16,10 @@ class Home extends Component<MyProps, MyState> {
   }
 
   render(){
-    const { isAuthenticated, profile } = this.props;
+    const { login } = this.props;
     return(
       <div>
-        <Auth
-          isAuthenticated={isAuthenticated}
-          profile={profile}
-          onLoginClick={this.props.login}
-          onLogoutClick={this.props.logout}
-        />
+        <button onClick={login}>loginbruh</button>
       </div>
     );
   }

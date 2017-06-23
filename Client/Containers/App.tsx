@@ -9,7 +9,10 @@ import Home from './Home';
 
 let store = createStore(reducers,applyMiddleware(ReduxThunk));
 
-interface MyProps {}
+interface MyProps {
+  path: string,
+  component: any,
+}
 interface MyState {}
 
 class App extends Component<MyProps, MyState> {
