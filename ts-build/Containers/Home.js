@@ -6,9 +6,12 @@ class Home extends Component {
         super(props);
     }
     render() {
-        const { login } = this.props;
+        const { login, history } = this.props;
         return (React.createElement("div", null,
-            React.createElement("button", { onClick: login }, "loginbruh")));
+            React.createElement("button", { onClick: () => {
+                    console.log('this the history bitch', history);
+                    login(history);
+                } }, "loginbruh")));
     }
 }
 const mapStateToProps = (state) => {

@@ -16,10 +16,13 @@ class Home extends Component<MyProps, MyState> {
   }
 
   render(){
-    const { login } = this.props;
+    const { login, history } = this.props;
     return(
       <div>
-        <button onClick={login}>loginbruh</button>
+        <button onClick={() => {
+          console.log('this the history bitch' ,history);
+          login(history)
+        }}>loginbruh</button>
       </div>
     );
   }

@@ -16,7 +16,7 @@ const loginError = (err: string) => {
   }
 };
 
-export const login = () => {
+export const login = (history: object) => {
   const lock = new Auth0Lock('waLh6LFI5mkxJEckZDmaYc5q54nIYB4p', 'workoutbuddy.auth0.com');
   console.log('login gets fired');
   return (dispatch:any) => {
@@ -30,6 +30,7 @@ export const login = () => {
       console.log('we get chea2');
       localStorage.setItem('profile', JSON.stringify(profile));
       localStorage.setItem('id_token', token);
+      history.push('/dashboard');
       return dispatch(loginSuccess(profile));
     });
   }

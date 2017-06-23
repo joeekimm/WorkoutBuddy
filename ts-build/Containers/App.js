@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from '../Reducers/RootReducer';
 import Home from './Home';
+import Dashboard from './Dashboard';
 let store = createStore(reducers, applyMiddleware(ReduxThunk));
 class App extends Component {
     constructor() {
@@ -14,7 +15,8 @@ class App extends Component {
         return (React.createElement(BrowserRouter, null,
             React.createElement(Provider, { store: store },
                 React.createElement(Switch, null,
-                    React.createElement(Route, { path: "/", component: Home })))));
+                    React.createElement(Route, { path: "/", component: Home }),
+                    React.createElement(Route, { path: "/dashboard", component: Dashboard })))));
     }
 }
 export default App;

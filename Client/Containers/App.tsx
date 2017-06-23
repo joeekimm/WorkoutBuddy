@@ -5,6 +5,7 @@ import { Provider, connect } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from '../Reducers/RootReducer';
 import Home from './Home';
+import Dashboard from './Dashboard';
 
 
 let store = createStore(reducers,applyMiddleware(ReduxThunk));
@@ -26,6 +27,7 @@ class App extends Component<MyProps, MyState> {
               <Provider store={store}>
                 <Switch>
                   <Route path="/" component={Home}/>
+                  <Route path="/dashboard" component={Dashboard}/>
                 </Switch>
               </Provider>
             </BrowserRouter>
