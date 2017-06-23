@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import {  createStore, applyMiddleware } from 'redux';
 import { Provider, connect } from 'react-redux';
-import Home from '../Components/Home';
+import ReduxThunk from 'redux-thunk';
+import reducers from '../Reducers/RootReducer';
+import Home from './Home';
 
 
-let store = createStore(applyMiddleware());
+let store = createStore(reducers,applyMiddleware(ReduxThunk));
 
 interface MyProps {}
 interface MyState {}

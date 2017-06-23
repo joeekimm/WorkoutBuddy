@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import Home from '../Components/Home';
-let store = createStore(applyMiddleware());
+import ReduxThunk from 'redux-thunk';
+import reducers from '../Reducers/RootReducer';
+import Home from './Home';
+let store = createStore(reducers, applyMiddleware(ReduxThunk));
 class App extends Component {
     constructor() {
         super();
