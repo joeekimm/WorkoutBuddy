@@ -8,11 +8,13 @@ interface MyProps {
   logout: any,
   isAuthenticated: any,
   profile: any,
+  history: object,
 }
 
 class Home extends Component<MyProps, MyState> {
   constructor(props: any) {
     super(props);
+    this.state = {};
   }
 
   render(){

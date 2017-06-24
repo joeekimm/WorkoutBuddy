@@ -16,18 +16,14 @@ const loginError = (err: string) => {
   }
 };
 
-export const login = (history: object) => {
+export const login = (history: any) => {
   const lock = new Auth0Lock('waLh6LFI5mkxJEckZDmaYc5q54nIYB4p', 'workoutbuddy.auth0.com');
-  console.log('login gets fired');
   return (dispatch:any) => {
-    console.log('we get chea');
     lock.show((err:string, profile:object, token:string) => {
-      console.log('are we getting to this part?')
       if(err) {
-        console.log('the error is ,',err);
+        console.log('the login error is,',err);
         return dispatch(loginError(err))
       }
-      console.log('we get chea2');
       localStorage.setItem('profile', JSON.stringify(profile));
       localStorage.setItem('id_token', token);
       history.push('/dashboard');
@@ -36,17 +32,17 @@ export const login = (history: object) => {
   }
 }
 
-export const logoutSuccess = (profile: object) => {
+export const logoutSuccess = () => {
   return {
     type: LOGOUT_SUCCESS,
   }
 };
 
-export const logout = () => {
+export const logout = (history:any) => {
   return (dispatch:any) => {
     localStorage.removeItem('id_token');
     localStorage.removeItem('profile');
-    // @ts-ignore
+    history.push('/');
     return dispatch(logoutSuccess());
   }
 }

@@ -17,8 +17,8 @@ interface MyProps {
 interface MyState {}
 
 class App extends Component<MyProps, MyState> {
-    constructor() {
-        super();
+    constructor(props: MyProps) {
+        super(props);
     }
 
     render() {
@@ -26,7 +26,7 @@ class App extends Component<MyProps, MyState> {
             <BrowserRouter>
               <Provider store={store}>
                 <Switch>
-                  <Route path="/" component={Home}/>
+                  <Route exact path="/" component={Home}/>
                   <Route path="/dashboard" component={Dashboard}/>
                 </Switch>
               </Provider>
