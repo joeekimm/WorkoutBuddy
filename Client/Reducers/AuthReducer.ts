@@ -27,16 +27,20 @@ const auth = (state = {
   err: '',
 }, action: any) => {
 
+  console.log(state);
+  console.log(action);
   console.log(checkTokenExpiry(), getProfile());
 
   switch(action.type) {
     case LOGIN_SUCCESS :
+      console.log('login success');
       return {
         ...state,
         isAuthenticated: true,
         profile: action.profile,
       }
     case LOGIN_ERROR :
+      console.log('login error');
       return {
         ...state,
         isAuthenticated: false,
@@ -44,6 +48,7 @@ const auth = (state = {
         error: action.error,
       }
     case LOGOUT_SUCCESS :
+      console.log('logout success');
       return {
         ...state,
         isAuthenticated: false,

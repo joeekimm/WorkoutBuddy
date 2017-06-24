@@ -50,6 +50,7 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
+    "redux-persist": "^4.8.1",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.1.0",
     "sequelize-fixtures": "^0.6.0",

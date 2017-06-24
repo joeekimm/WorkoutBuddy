@@ -23,12 +23,23 @@ export const login = (history: any) => {
   const lock = new Auth0Lock('waLh6LFI5mkxJEckZDmaYc5q54nIYB4p', 'workoutbuddy.auth0.com');
   return (dispatch:any) => {
     lock.show((err:string, profile:object, token:string) => {
-      if(err) {
-        console.log('the login error is,',err);
+      if (err) {
+        console.log('the login error is,', err);
         return dispatch(loginError(err))
       }
       localStorage.setItem('profile', JSON.stringify(profile));
       localStorage.setItem('id_token', token);
+      const body = {
+        user_id: JSON.parse(localStorage.getItem('profile')).user_id,
+    }
+      console.log('this is the bodey being sent' ,body);
+      axios.post(`/api/users`, body)
+        .then((user) => {
+          console.log('something special happened , ', user);
+        })
+        .catch((err) => {
+          console.log('route is fucked up somehow ,', err);
+        })
       history.push('/dashboard');
       return dispatch(loginSuccess(profile));
     });
