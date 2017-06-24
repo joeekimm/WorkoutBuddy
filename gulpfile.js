@@ -1,10 +1,50 @@
 const gulp = require('gulp');
+const sass = require('gulp-sass');
+const plumber = require('gulp-plumber');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const browserSync = require('browser-sync').create();
 const nodemon = require('gulp-nodemon');
 const env = require('gulp-env');
 const util = require('gulp-util');
-const sequelizeFixtures = require('sequelize-fixtures');
 
 const db = require('./server/db/models');
+
+const input = './Client/Styles/main.scss'
+const output = './Client/Styles/css';
+
+//******FRONTEND GULP TASKS*******//
+
+gulp.task('sass', () => {
+  return gulp.src(input)
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(autoprefixer({browsers: ['last 2 versions', '> 5%', 'Firefox ESR']}))
+    .pipe(gulp.dest(output))
+    .pipe(browserSync.stream());
+});
+
+//Watch files for changes and set browser sync
+gulp.task('watch', () => {
+  //BrowserSync settings
+  browserSync.init({
+    proxy: "http://localhost:5000",
+    files: "./Client/Styles/css/main.css",
+  });
+
+  gulp.watch(input, ['sass'])
+    .on('change', (event) => {
+      console.log(`File ${event.path} was ${event.type} , running tasks...`);
+    })
+})
+
+//default front end tasks
+
+gulp.task('frontend', ['sass', 'watch']);
+
+
+
+//******BACKEND GULP TASKS******////
 
 gulp.task('sync', (cb) => {
   db.Review.sync({ force: true })
