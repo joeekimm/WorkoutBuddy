@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
 import { compose,createStore, applyMiddleware } from 'redux';
 import { Provider, connect } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
@@ -7,19 +7,13 @@ import reducers from '../Reducers/RootReducer';
 import {persistStore, autoRehydrate} from 'redux-persist'
 import Home from './Home';
 import Dashboard from './Dashboard';
+import WorkoutInfo from '../Components/Workoutinfo';
 
 let store = createStore(reducers,applyMiddleware(ReduxThunk));
 
-// persistStore(store);
 
-interface MyProps {
-  path: string,
-  component: any,
-}
-interface MyState {}
-
-class App extends Component<MyProps, MyState> {
-    constructor(props: MyProps) {
+class App extends Component<any, any> {
+    constructor(props: any) {
         super(props);
     }
 
@@ -30,6 +24,7 @@ class App extends Component<MyProps, MyState> {
                 <Switch>
                   <Route exact path="/" component={Home}/>
                   <Route path="/dashboard" component={Dashboard}/>
+                  <Route path="/workoutinfo" component={WorkoutInfo}/>
                 </Switch>
               </Provider>
             </BrowserRouter>

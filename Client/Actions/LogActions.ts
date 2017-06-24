@@ -32,15 +32,19 @@ export const login = (history: any) => {
       const body = {
         user_id: JSON.parse(localStorage.getItem('profile')).user_id,
     }
-      console.log('this is the bodey being sent' ,body);
+      console.log('this is the body being sent' ,body);
       axios.post(`/api/users`, body)
-        .then((user) => {
-          console.log('something special happened , ', user);
+        .then((res:object) => {
+          if(res.data === 'user was created') {
+            history.push('/workoutinfo');
+          }
+          if(res.data === 'user already exists') {
+            history.push('/dashboard');
+          }
         })
         .catch((err) => {
           console.log('route is fucked up somehow ,', err);
         })
-      history.push('/dashboard');
       return dispatch(loginSuccess(profile));
     });
   }
