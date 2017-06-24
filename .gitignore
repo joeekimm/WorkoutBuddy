@@ -57,6 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+ts-build
+
 yarn.lock
 .idea/WorkoutBuddy.iml
 .idea/modules.xml

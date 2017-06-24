@@ -11,14 +11,17 @@ module.exports = {
   },
   watch: true,
   module: {
-    loaders: [{
+    rules: [
+      {
       test: /\.tsx?$/,
-      loaders:  ['babel-loader', 'ts-loader'],
-      include: DEV,
-      query: {
+      loader: 'ts-loader',
+        exclude: /node_modules/,
+        include: DEV,
+      options: {
         presets: ['es2015', 'react'],
       },
-    }],
+    },
+    ],
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
