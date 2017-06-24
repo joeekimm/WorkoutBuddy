@@ -18,11 +18,6 @@ server.use(express.static('Client'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended:true }));
 
-const authCheck = jwt({
-  secret: process.env.AUTH0_SECRET,
-  audience: process.env.AUTH0_ID,
-})
-
 server.listen(PORT, (err) => {
   if (err) {
     console.log(`there was an error listening on ${PORT}`);
