@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import {  createStore, applyMiddleware } from 'redux';
+import { compose,createStore, applyMiddleware } from 'redux';
 import { Provider, connect } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from '../Reducers/RootReducer';
+import {persistStore, autoRehydrate} from 'redux-persist'
 import Home from './Home';
 import Dashboard from './Dashboard';
 
+let store = createStore(compose(reducers,applyMiddleware(ReduxThunk), autoRehydrate()));
 
-let store = createStore(reducers,applyMiddleware(ReduxThunk));
+persistStore(store);
 
 interface MyProps {
   path: string,

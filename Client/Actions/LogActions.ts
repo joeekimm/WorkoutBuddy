@@ -32,8 +32,14 @@ export const login = (history: any) => {
       const body = {
         user_id: JSON.parse(localStorage.getItem('profile')).user_id,
     }
-      console.log(body);
+      console.log('this is the bodey being sent' ,body);
       axios.post(`/api/users`, body)
+        .then((user) => {
+          console.log('something special happened , ', user);
+        })
+        .catch((err) => {
+          console.log('route is fucked up somehow ,', err);
+        })
       history.push('/dashboard');
       return dispatch(loginSuccess(profile));
     });

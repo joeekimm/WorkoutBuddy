@@ -3,6 +3,7 @@ const jwt = require('express-jwt');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
+const router = require('./router/index');
 const PORT = process.env.PORT || 5000;
 
 require('dotenv').config();

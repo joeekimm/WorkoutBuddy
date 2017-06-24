@@ -2,13 +2,19 @@ const Sequelize = require('sequelize');
 const db = require('../config/');
 
 const User = db.define('User', {
+  id: {
+    type: Sequelize.STRING,
+    unique: true,
+    primaryKey: true,
+    allowNull: false,
+  },
   firstName: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   lastName: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   personalityType: {
     type: Sequelize.STRING,

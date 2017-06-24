@@ -8,7 +8,7 @@ const nodemon = require('gulp-nodemon');
 const env = require('gulp-env');
 const util = require('gulp-util');
 
-const db = require('./server/db/models');
+const db = require('./server/db/models/index');
 
 const input = './Client/Styles/main.scss'
 const output = './Client/Styles/css';
@@ -47,12 +47,12 @@ gulp.task('frontend', ['sass', 'watch']);
 //******BACKEND GULP TASKS******////
 
 gulp.task('sync', (cb) => {
-  db.Review.sync({ force: true })
+  db.User.sync({ force: true })
     .then(() => { db.Accomplishment.sync({ force: true })})
     .then(() => { db.Workout.sync({ force: true })})
     .then(() => { db.Message.sync({ force: true })})
     .then(() => { db.BodyPart.sync({ force: true })})
-    .then(() => { db.User.sync({ force: true })})
+    .then(() => { db.Review.sync({ force: true })})
     .then(() => { cb(); })
     .catch((err) => { cb(err); })
 });
