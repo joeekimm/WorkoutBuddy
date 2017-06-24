@@ -8,9 +8,9 @@ import {persistStore, autoRehydrate} from 'redux-persist'
 import Home from './Home';
 import Dashboard from './Dashboard';
 
-let store = createStore(compose(reducers,applyMiddleware(ReduxThunk), autoRehydrate()));
+let store = createStore(reducers,applyMiddleware(ReduxThunk));
 
-persistStore(store);
+// persistStore(store);
 
 interface MyProps {
   path: string,
