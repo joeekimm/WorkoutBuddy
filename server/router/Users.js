@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
       if(created) {
         res.status(200).send('user was created');
       } else {
-        res.status(500).send('user already exists');
+        res.status(200).send('user already exists');
       }
     })
     .catch((err) => {

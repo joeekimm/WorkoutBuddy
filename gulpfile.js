@@ -10,10 +10,10 @@ const util = require('gulp-util');
 
 const db = require('./server/db/models/index');
 
+//******FRONTEND GULP TASKS*******//
+
 const input = './Client/Styles/main.scss'
 const output = './Client/Styles/css';
-
-//******FRONTEND GULP TASKS*******//
 
 gulp.task('sass', () => {
   return gulp.src(input)
