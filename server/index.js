@@ -18,6 +18,8 @@ server.use(express.static('Client'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended:true }));
 
+server.use('/api', router);
+
 server.listen(PORT, (err) => {
   if (err) {
     console.log(`there was an error listening on ${PORT}`);
