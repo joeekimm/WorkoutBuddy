@@ -20,6 +20,10 @@ const Workout = db.define('Workout', {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  score: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  }
 })
 
 module.exports = Workout;
