@@ -9,7 +9,7 @@ const env = require('gulp-env');
 const util = require('gulp-util');
 
 const db = require('./server/db/models/index');
-
+const database = require('./server/db/config');
 //******FRONTEND GULP TASKS*******//
 
 const input = './Client/Styles/main.scss'
@@ -47,12 +47,14 @@ gulp.task('frontend', ['sass', 'watch']);
 //******BACKEND GULP TASKS******////
 
 gulp.task('sync', (cb) => {
-  db.User.sync({ force: true })
+  database.query('SET FOREIGN_KEY_CHECKS=0')
+    .then(() => { db.User.sync({ force: true })})
     .then(() => { db.Accomplishment.sync({ force: true })})
     .then(() => { db.Workout.sync({ force: true })})
     .then(() => { db.Message.sync({ force: true })})
     .then(() => { db.BodyPart.sync({ force: true })})
     .then(() => { db.Review.sync({ force: true })})
+    .then(() => { database.query('SET FOREIGN_KEY_CHECKS=1')})
     .then(() => { cb(); })
     .catch((err) => { cb(err); })
 });
