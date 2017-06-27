@@ -8,8 +8,8 @@ const nodemon = require('gulp-nodemon');
 const env = require('gulp-env');
 const util = require('gulp-util');
 
-const db = require('./server/db/models/index');
-const database = require('./server/db/config');
+const db = require('./server/db/config');
+const database = require('./server/db');
 //******FRONTEND GULP TASKS*******//
 
 const input = './Client/Styles/main.scss'

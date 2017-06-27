@@ -66,3 +66,5 @@ yarn.lock
 .idea/watcherTasks.xml
 
 /Client/bundle.js
+
+note.js
