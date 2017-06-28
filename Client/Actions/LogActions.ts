@@ -30,11 +30,11 @@ export const login = (history: any) => {
       localStorage.setItem('profile', JSON.stringify(profile));
       localStorage.setItem('id_token', token);
       const body = {
-        user_id: JSON.parse(localStorage.getItem('profile')).user_id,
+        id: JSON.parse(localStorage.getItem('profile')).user_id,
     }
       console.log('this is the body being sent' ,body);
       axios.post(`/api/users`, body)
-        .then((res:object) => {
+        .then((res:any) => {
           if(res.data === 'user was created') {
             history.push('/workoutinfo');
           }
