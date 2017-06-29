@@ -6,18 +6,45 @@
 
 body {
   margin: 0;
+  @include font($main-font);
 }
-
-
-
 /***********************/
 
 
+
+
+/******Component Ternary Classes*********/
+
+#nav-scroll {
+  background-color: white;
+  color: mediumspringgreen;
+}
+
+/****************************************/
+
+
+
+
 /******HOME PAGE*****/
+
+
 .home-wrapper {
   @include flex(column, center, center);
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    width: 90vw;
+    left: 5vw;
+    height: 10vh;
+    background-color: transparent;
+    color: white;
+  }
   .home {
     @include full-bg('http://gdurl.com/t3Ah');
+    color: white;
+    p {
+      z-index: 2;
+    }
     div {
       @include dark-overlay;
     }
@@ -25,12 +52,45 @@ body {
       z-index: 2;
       position: relative;
     }
-    @include breakpoint(small) {
+  }
+  @include breakpoint(small) {
+    .nav-bar {
+      display: none;
     }
-    @include breakpoint(medium) {
+    .home {
+      @include flex(column, center, center);
+      p {
+        font-size: 150%;
+      }
     }
-    @include breakpoint(large) {
-
+  }
+  @include breakpoint(medium) {
+    .nav-bar {
+      @include flex(row, space-between, center);
+      z-index: 2;
+    }
+    .home {
+      p {
+        font-size: 200%;
+      }
+      .down {
+        background-color: transparent;
+        border-style: none;
+        position: absolute;
+        bottom: 2vh;
+        z-index: 2;
+        .move-downwards {
+          font-size: 50px;
+          color: white;
+        }
+      }
+    }
+  }
+  @include breakpoint(large) {
+    .home {
+      p {
+        font-size: 250%;
+      }
     }
   }
   .how-it-works {
@@ -39,7 +99,5 @@ body {
     width: 100vw;
   }
 }
-
-
 
 /*************************/
