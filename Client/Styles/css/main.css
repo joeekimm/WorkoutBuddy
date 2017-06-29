@@ -1,12 +1,20 @@
 /*breakpoints*/
-/**/
+/*FONTS*/
 /*breakpoints*/
-/**/
+/*FONTS*/
 /******HTML ELEMENTS*****/
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 100%; }
 
 /***********************/
+/******Component Ternary Classes*********/
+#nav-scroll {
+  background-color: white;
+  color: mediumspringgreen; }
+
+/****************************************/
 /******HOME PAGE*****/
 .home-wrapper {
   display: -webkit-box;
@@ -19,15 +27,27 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .home-wrapper .nav-bar {
+    position: fixed;
+    top: 0;
+    width: 90vw;
+    left: 5vw;
+    height: 10vh;
+    background-color: transparent;
+    color: white; }
   .home-wrapper .home {
     height: 100vh;
     width: 100vw;
     background-image: url("http://gdurl.com/t3Ah");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50%; }
+    background-position: 50%;
+    color: white; }
+    .home-wrapper .home p {
+      z-index: 2; }
     .home-wrapper .home div {
       height: 100vh;
       width: 100vw;
@@ -37,5 +57,58 @@ body {
     .home-wrapper .home button {
       z-index: 2;
       position: relative; }
+  @media (min-width: 300px) {
+    .home-wrapper .nav-bar {
+      display: none; }
+    .home-wrapper .home {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .home-wrapper .home p {
+        font-size: 150%; } }
+  @media (min-width: 768px) {
+    .home-wrapper .nav-bar {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      z-index: 2; }
+    .home-wrapper .home p {
+      font-size: 200%; }
+    .home-wrapper .home .down {
+      background-color: transparent;
+      border-style: none;
+      position: absolute;
+      bottom: 2vh;
+      z-index: 2; }
+      .home-wrapper .home .down .move-downwards {
+        font-size: 50px;
+        color: white; } }
+  @media (min-width: 1080px) {
+    .home-wrapper .home p {
+      font-size: 250%; } }
+  .home-wrapper .how-it-works {
+    background-color: white;
+    height: 100vh;
+    width: 100vw; }
 
 /*************************/
