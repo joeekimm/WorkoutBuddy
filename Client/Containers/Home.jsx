@@ -33,11 +33,12 @@ class Home extends Component {
   }
 
   render() {
+    const { login,history } = this.props;
     return (
       <div className="home-wrapper">
        <nav className="nav-bar">
          <h2>WorkoutBuddy</h2>
-         <button>login</button>
+         <button onClick={() => { login(history) }}>Log in</button>
        </nav>
         <div className="home">
           <div />
@@ -45,7 +46,7 @@ class Home extends Component {
             Workout Buddy is a platform that <br />
             connects fitness freaks together!
           </p>
-          <button onClick={this.props.login}>see how many people around your area!</button>
+          <button className="area">see how many people around your area</button>
           <button onClick={ () => this.handlePageScroll('discover') } className="down">
             <i className="animated pulse infinite fa fa-chevron-down move-downwards" aria-hidden="true" />
           </button>

@@ -1,7 +1,9 @@
 /*breakpoints*/
 /*FONTS*/
+/*COLORS*/
 /*breakpoints*/
 /*FONTS*/
+/*COLORS*/
 /******HTML ELEMENTS*****/
 body {
   margin: 0;
@@ -29,6 +31,12 @@ body {
     height: 10vh;
     background-color: transparent;
     color: white; }
+    .home-wrapper .nav-bar button {
+      background-color: transparent;
+      border-style: none;
+      font-family: "Poppins", sans-serif;
+      font-size: 100%;
+      color: white; }
   .home-wrapper .home {
     height: 100vh;
     width: 100vw;
@@ -38,13 +46,25 @@ body {
     background-position: 50%;
     color: white; }
     .home-wrapper .home p {
-      z-index: 2; }
+      z-index: 2;
+      margin-bottom: 10%; }
     .home-wrapper .home div {
       height: 100vh;
       width: 100vw;
       position: absolute;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.6);
       z-index: 1; }
+    .home-wrapper .home .area {
+      font-family: "Poppins", sans-serif;
+      font-size: 100%;
+      background-color: #849fff;
+      color: white;
+      border-radius: 6px;
+      height: 6vh;
+      width: auto;
+      border-style: none;
+      padding: 1.5%;
+      line-height: 1.5%; }
     .home-wrapper .home button {
       z-index: 2;
       position: relative; }

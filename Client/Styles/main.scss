@@ -38,15 +38,29 @@ body {
     height: 10vh;
     background-color: transparent;
     color: white;
+    button {
+      background-color: transparent;
+      border-style: none;
+      font-family: "Poppins", sans-serif;
+      font-size: 100%;
+      color: white;
+    }
   }
   .home {
     @include full-bg('http://gdurl.com/t3Ah');
     color: white;
     p {
       z-index: 2;
+      margin-bottom: 10%;
     }
     div {
       @include dark-overlay;
+    }
+    .area {
+      @include button($main-font,$attentive, white, 6px, 6vh, auto);
+      border-style: none;
+      padding: 1.5%;
+      line-height: 1.5%;
     }
     button {
       z-index: 2;
