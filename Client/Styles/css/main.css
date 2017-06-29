@@ -1,0 +1,41 @@
+/*breakpoints*/
+/**/
+/*breakpoints*/
+/**/
+/******HTML ELEMENTS*****/
+body {
+  margin: 0; }
+
+/***********************/
+/******HOME PAGE*****/
+.home-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center; }
+  .home-wrapper .home {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("http://gdurl.com/t3Ah");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%; }
+    .home-wrapper .home div {
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1; }
+    .home-wrapper .home button {
+      z-index: 2;
+      position: relative; }
+
+/*************************/

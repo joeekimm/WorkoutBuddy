@@ -68,3 +68,4 @@ yarn.lock
 /Client/bundle.js
 
 note.js
+/Client/Styles/Partials/_mixins.scss

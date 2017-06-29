@@ -1,0 +1,45 @@
+@import './Partials/mixins';
+@import './Partials/variables';
+
+
+/******HTML ELEMENTS*****/
+
+body {
+  margin: 0;
+}
+
+
+
+/***********************/
+
+
+/******HOME PAGE*****/
+.home-wrapper {
+  @include flex(column, center, center);
+  .home {
+    @include full-bg('http://gdurl.com/t3Ah');
+    div {
+      @include dark-overlay;
+    }
+    button {
+      z-index: 2;
+      position: relative;
+    }
+    @include breakpoint(small) {
+    }
+    @include breakpoint(medium) {
+    }
+    @include breakpoint(large) {
+
+    }
+  }
+  .how-it-works {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+
+
+/*************************/
