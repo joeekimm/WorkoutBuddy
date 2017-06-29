@@ -4,27 +4,23 @@ const DEV = path.join(__dirname, '/Client');
 const OUTPUT = path.join(__dirname, '/Client');
 
 module.exports = {
-  entry: `${DEV}/index.tsx`,
+  entry: `${DEV}/index.jsx`,
   output: {
     path: OUTPUT,
     filename: 'bundle.js',
   },
   watch: true,
   module: {
-    rules: [
-      {
-      test: /\.tsx?$/,
-      loader: 'ts-loader',
-        exclude: /node_modules/,
-        include: DEV,
-      options: {
+    loaders: [{
+      loader: 'babel-loader',
+      include: DEV,
+      query: {
         presets: ['es2015', 'react'],
       },
-    },
-    ],
+    }],
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.js', '.jsx'],
   },
   devtool: 'inline-source-map',
 };
