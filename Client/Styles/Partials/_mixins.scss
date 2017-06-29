@@ -12,7 +12,7 @@
     height: 100vh;
     width: 100vw;
     position: absolute;
-    background-color: rgba(0,0,0,.4);
+    background-color: rgba(0,0,0,.6);
     z-index: 1;
 }
 
@@ -29,6 +29,15 @@
 @mixin font($font:$main-font, $size: 100%) {
   font-family: $font;
   font-size: $size;
+}
+
+@mixin button($font, $bc, $c, $br, $h, $w) {
+  @include font($font);
+  background-color: $bc;
+  color: $c;
+  border-radius: $br;
+  height: $h;
+  width: $w;
 }
 
 

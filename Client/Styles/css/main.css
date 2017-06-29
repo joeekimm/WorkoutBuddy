@@ -1,7 +1,14 @@
 /*breakpoints*/
 /*FONTS*/
+<<<<<<< HEAD
 /*breakpoints*/
 /*FONTS*/
+=======
+/*COLORS*/
+/*breakpoints*/
+/*FONTS*/
+/*COLORS*/
+>>>>>>> feat/landing
 /******HTML ELEMENTS*****/
 body {
   margin: 0;
@@ -54,6 +61,12 @@ body {
       position: absolute;
       background-color: rgba(0, 0, 0, 0.4);
       z-index: 1; }
+    .home-wrapper .home .area {
+      font-family: "Poppins", sans-serif;
+      font-size: 100%;
+      border-radius: 6px;
+      height: 6vh;
+      width: 10vh; }
     .home-wrapper .home button {
       z-index: 2;
       position: relative; }
