@@ -4,12 +4,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const router = require('./router/index');
+const db = require('./db/config');
+
 const PORT = process.env.PORT || 5000;
 
 require('dotenv').config();
-
-const parser = require('body-parser');
-const db = require('./db/config');
 
 const server = express();
 
@@ -17,13 +16,13 @@ server.use(cors());
 server.use(express.static('Client'));
 
 server.use(bodyParser.json());
-server.use(bodyParser.urlencoded({ extended:true }));
+server.use(bodyParser.urlencoded({ extended: true }));
 
 server.use('/api', router);
 
-server.get('*', (req,res) => {
+server.get('*', (req, res) => {
   console.log('we hit the route bruh');
-  res.sendfile(path.resolve(__dirname,'../Client/index.html'));
+  res.sendfile(path.resolve(__dirname, '../Client/index.html'));
 });
 
 server.listen(PORT, (err) => {
