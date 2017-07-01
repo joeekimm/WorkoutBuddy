@@ -20,19 +20,26 @@ export default class UserQueries extends UserQuerySelectors {
     return result;
   }
 
-  async addUser({ body }) {
+  async addUser(body) {
+    console.log(body);
     const queryString = super.postUser(body);
-    return await db.queryAsync(queryString);
+    const result = db.query(queryString);
+    return result;
+    // return await db.queryAsync(queryString);
   }
 
   async updateUser({ body }) {
     const queryString = super.putUser(body);
-    return await db.queryAsync(queryString);
+    const result = db.query(queryString);
+    return result;
+    // return await db.queryAsync(queryString);
   }
 
   async removeUser(id) {
     const queryString = super.deleteUser(id);
-    return await db.queryAsync(queryString);
+    const result = db.query(queryString);
+    return result;
+    // return await db.queryAsync(queryString);
   }
 }
 

@@ -1,8 +1,8 @@
 export default class UserQuerySelector {
 
-  postUser(id, firstName, lastName, personalityType, preference, schedule, bodySpecs) {
-    return `INSERT INTO USERS 
-            VALUES (${id}, ${firstName}, ${lastName}, ${personalityType}, ${preference}, ${schedule}, ${bodySpecs})`;
+  postUser({ id, firstName, lastName, personalityType, preference, schedule, bodySpecs }) {
+    return `INSERT INTO USERS (id, firstName, lastName, personalityType, preference, schedule, bodySpecs)
+            VALUES (${id}, '${firstName}', '${lastName}', '${personalityType}', '${preference}', '${schedule}', '${bodySpecs}')`;
   }
 
   getUser(id) {
@@ -15,14 +15,14 @@ export default class UserQuerySelector {
             LEFT OUTER JOIN WORKOUTS ON user_id = ${id}`;
   }
 
-  putUserInfo(id, firstName, lastName, personalityType, preference, schedule, bodySpecs) {
+  putUserInfo({ id, firstName, lastName, personalityType, preference, schedule, bodySpecs }) {
     return `UPDATE USERS 
-            SET firstName = ${firstName},
-            lastName = ${lastName},
-            personalityType = ${personalityType},
-            preference = ${preference},
-            schedule = ${schedule},
-            bodySpecs = ${bodySpecs}
+            SET firstName = '${firstName}',
+            lastName = '${lastName}',
+            personalityType = '${personalityType}',
+            preference = '${preference}',
+            schedule = '${schedule}',
+            bodySpecs = '${bodySpecs}'
             WHERE id = ${id}`;
   }
 
