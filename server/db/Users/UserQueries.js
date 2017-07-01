@@ -1,8 +1,9 @@
-// import Promise from 'bluebird'
-const Promise = require('bluebird');
-
-const UserQuerySelectors = require('./UserQuerySelectors');
-const db = require('../');
+import Promise from 'bluebird';
+// const Promise = require('bluebird');
+import UserQuerySelectors from './UserQuerySelectors';
+// const UserQuerySelectors = require('./UserQuerySelectors');
+import db from '../';
+// const db = require('../');
 
 Promise.promisifyAll(db);
 
@@ -12,22 +13,25 @@ export default class UserQueries extends UserQuerySelectors {
   }
 
   async fetchOneUserInfo(id) {
-    const queryString = this.getUser(id);
-    return await db.queryAsync(queryString);
+  // fetchOneUserInfo(id) {
+    const queryString = super.getUser(id);
+    // const result = db.queryAsync(queryString);
+    const result = db.query(queryString);
+    return result;
   }
 
   async addUser({ body }) {
-    const queryString = this.postUser(body);
+    const queryString = super.postUser(body);
     return await db.queryAsync(queryString);
   }
 
   async updateUser({ body }) {
-    const queryString = this.putUser(body);
+    const queryString = super.putUser(body);
     return await db.queryAsync(queryString);
   }
 
   async removeUser(id) {
-    const queryString = this.deleteUser(id);
+    const queryString = super.deleteUser(id);
     return await db.queryAsync(queryString);
   }
 }
