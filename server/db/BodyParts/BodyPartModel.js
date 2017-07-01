@@ -10,6 +10,11 @@ const BodyPart = db.define('BodyPart', {
     type: Sequelize.STRING,
     allowNull: false,
   },
-})
+  // timestamps: false,
+},
+  {
+    timestamps: false,
+  },
+);
 
 module.exports = BodyPart;
