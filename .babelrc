@@ -1,9 +1,14 @@
 {
-  "presets": ["react", "es2015", "stage-1"],
-  "plugins": ["transform-decorators-legacy", "transform-regenerator"],
-  "env": {
-    "test": {
-      "plugins": [ "istanbul" ]
-    }
-  }
+  "plugins": ["transform-decorators-legacy", "transform-regenerator", "transform-es2015-modules-commonjs", 
+              ["transform-object-rest-spread", {
+                "useBuiltIns": true
+              }
+              ]],
+  "presets": ["react", "es2015", "stage-3", "es2015-node6",
+              ["env", {
+                "targets": {
+                  "node": "current"
+                }
+              }
+              ]]
 }
