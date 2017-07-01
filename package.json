@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "start": "nodemon server/index.js",
     "test": "jest --coverage",
     "test:watch": "jest --watch"
@@ -13,11 +12,6 @@
     "collectCoverageFrom": [
       "*.js"
     ]
-=======
-    "start": "webpack & nodemon server/index.js",
-    "s": "babel-node server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> [Add]
   },
   "repository": {
     "type": "git",
