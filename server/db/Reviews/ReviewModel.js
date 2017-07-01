@@ -10,6 +10,11 @@ const Review = db.define('Review', {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
-})
+  // timestamps: false,
+},
+  {
+    timestamps: false,
+  },
+);
 
 module.exports = Review;

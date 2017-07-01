@@ -42,8 +42,12 @@ const User = db.define('User', {
     },
     set: (val) => {
       this.setDataValues('bodySpecs', val.join(';'));
-    }
+    },
   },
-});
+},
+  {
+    timestamps: false,
+  },
+);
 
 module.exports = User;

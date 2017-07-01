@@ -6,6 +6,11 @@ const Message = db.define('Message', {
     type: Sequelize.STRING,
     allowNull: false,
   },
-})
+  // timestamps: false,
+},
+  {
+    timestamps: false,
+  },
+);
 
 module.exports = Message;
