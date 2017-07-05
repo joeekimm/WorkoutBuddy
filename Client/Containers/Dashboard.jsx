@@ -12,7 +12,7 @@ class Dashboard extends Component {
     const { logout, history } = this.props;
     return (
       <div>
-        dashboard hoooooor
+        dashboard hooooooreee
         <button onClick={() => {
           logout(history);
         }}
