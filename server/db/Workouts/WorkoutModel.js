@@ -5,12 +5,10 @@ const Workout = db.define('Workout', {
   routine: {
     type: Sequelize.STRING,
     allowNull: false,
-    get: () => {
-      return this.getDataValues('routine').split(';');
-    },
+    get: () => this.getDataValues('routine').split(';'),
     set: (val) => {
       this.setDataValues('routine').join(';');
-    }
+    },
   },
   focus: {
     type: Sequelize.STRING,
@@ -24,11 +22,15 @@ const Workout = db.define('Workout', {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
+<<<<<<< HEAD
   // timestamps: false,
 },
   {
     timestamps: false,
   },
 );
+=======
+});
+>>>>>>> trying to fix npm install issue
 
 module.exports = Workout;

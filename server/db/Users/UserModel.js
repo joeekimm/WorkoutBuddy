@@ -24,22 +24,26 @@ const User = db.define('User', {
     type: Sequelize.STRING,
     allowNull: true,
   },
+  lat: {
+    type: Sequelize.FLOAT,
+    allowNull: true,
+  },
+  lng: {
+    type: Sequelize.FLOAT,
+    allowNull: true,
+  },
   schedule: {
     type: Sequelize.STRING,
     allowNull: true,
-    get: () => {
-      return this.getDataValues('schedule').split(';')
-    },
+    get: () => this.getDataValues('schedule').split(';'),
     set: (val) => {
       this.setDataValues('schedule', val.join(';'));
-    }
+    },
   },
   bodySpecs: {
     type: Sequelize.STRING,
     allowNull: true,
-    get: () => {
-      return this.getDataValues('bodySpecs').split(';')
-    },
+    get: () => this.getDataValues('bodySpecs').split(';'),
     set: (val) => {
       this.setDataValues('bodySpecs', val.join(';'));
     },

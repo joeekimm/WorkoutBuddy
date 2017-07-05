@@ -17,14 +17,12 @@ const database = require('./server/db');
 const input = './Client/Styles/main.scss';
 const output = './Client/Styles/css';
 
-gulp.task('sass', () => {
-  return gulp.src(input)
+gulp.task('sass', () => gulp.src(input)
     .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer({ browsers: ['last 2 versions', '> 5%', 'Firefox ESR'] }))
     .pipe(gulp.dest(output))
-    .pipe(browserSync.stream());
-});
+    .pipe(browserSync.stream()));
 
 // Watch files for changes and set browser sync
 gulp.task('watch', () => {
@@ -48,13 +46,13 @@ gulp.task('frontend', ['sass', 'watch']);
 gulp.task('sync', (cb) => {
   database.query('SET FOREIGN_KEY_CHECKS=0')
   // database.queryAsync('SET FOREIGN_KEY_CHECKS=0')
-    .then(() => { db.User.sync({ force: true })})
-    .then(() => { db.Accomplishment.sync({ force: true })})
-    .then(() => { db.Workout.sync({ force: true })})
-    .then(() => { db.Message.sync({ force: true })})
-    .then(() => { db.BodyPart.sync({ force: true })})
-    .then(() => { db.Review.sync({ force: true })})
-    .then(() => { database.query('SET FOREIGN_KEY_CHECKS=1')})
+    .then(() => { db.User.sync({ force: true }); })
+    .then(() => { db.Accomplishment.sync({ force: true }); })
+    .then(() => { db.Workout.sync({ force: true }); })
+    .then(() => { db.Message.sync({ force: true }); })
+    .then(() => { db.BodyPart.sync({ force: true }); })
+    .then(() => { db.Review.sync({ force: true }); })
+    .then(() => { database.query('SET FOREIGN_KEY_CHECKS=1'); })
     .then(() => { cb(); })
     .catch((err) => { cb(err); });
 });
@@ -74,7 +72,7 @@ gulp.task('nodemon', () => {
 });
 
 // gulp.task('babel-node', () => { // (A)
-//   return "babel-node server/index.js" 
+//   return "babel-node server/index.js"
 //   // return gulp.src('server/index.js')
 //   //     .pipe(sourcemaps.init()) // (B)
 //   //     .pipe(babel())

@@ -6,7 +6,7 @@ const OUTPUT = path.join(__dirname, '/Client');
 
 module.exports = {
   target: 'node',
-  externals:[nodeExternals()],
+  externals: [nodeExternals()],
   entry: ['babel-polyfill', `${DEV}/index.jsx`],
   output: {
     path: OUTPUT,
