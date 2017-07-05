@@ -10,6 +10,11 @@ const Accomplishment = db.define('Accomplishment', {
     type: Sequelize.DATE,
     allowNull: false,
   },
-})
+  // timestamps: false,
+},
+  {
+    timestamps: false,
+  },
+);
 
 module.exports = Accomplishment;

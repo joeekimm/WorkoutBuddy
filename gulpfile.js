@@ -7,9 +7,11 @@ const browserSync = require('browser-sync').create();
 const nodemon = require('gulp-nodemon');
 const env = require('gulp-env');
 const util = require('gulp-util');
+const Promise = require('bluebird');
 const db = require('./server/db/config');
 const database = require('./server/db');
 
+// Promise.promisifyAll(database);
 // ******FRONTEND GULP TASKS******* //
 
 const input = './Client/Styles/main.scss';
@@ -19,7 +21,7 @@ gulp.task('sass', () => {
   return gulp.src(input)
     .pipe(plumber())
     .pipe(sass())
-    .pipe(autoprefixer({browsers: ['last 2 versions', '> 5%', 'Firefox ESR']}))
+    .pipe(autoprefixer({ browsers: ['last 2 versions', '> 5%', 'Firefox ESR'] }))
     .pipe(gulp.dest(output))
     .pipe(browserSync.stream());
 });
@@ -45,6 +47,7 @@ gulp.task('frontend', ['sass', 'watch']);
 
 gulp.task('sync', (cb) => {
   database.query('SET FOREIGN_KEY_CHECKS=0')
+  // database.queryAsync('SET FOREIGN_KEY_CHECKS=0')
     .then(() => { db.User.sync({ force: true })})
     .then(() => { db.Accomplishment.sync({ force: true })})
     .then(() => { db.Workout.sync({ force: true })})

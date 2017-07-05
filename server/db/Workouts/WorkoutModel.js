@@ -23,7 +23,12 @@ const Workout = db.define('Workout', {
   score: {
     type: Sequelize.INTEGER,
     allowNull: false,
-  }
-})
+  },
+  // timestamps: false,
+},
+  {
+    timestamps: false,
+  },
+);
 
 module.exports = Workout;
