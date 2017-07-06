@@ -22,15 +22,11 @@ const Workout = db.define('Workout', {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
-<<<<<<< HEAD
   // timestamps: false,
 },
   {
     timestamps: false,
   },
 );
-=======
-});
->>>>>>> trying to fix npm install issue
 
 module.exports = Workout;

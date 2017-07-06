@@ -1,13 +1,10 @@
-const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 
 const DEV = path.join(__dirname, '/Client');
 const OUTPUT = path.join(__dirname, '/Client');
 
 module.exports = {
-  target: 'node',
-  externals: [nodeExternals()],
-  entry: ['babel-polyfill', `${DEV}/index.jsx`],
+  entry: [`${DEV}/index.jsx`],
   output: {
     path: OUTPUT,
     filename: 'bundle.js',
