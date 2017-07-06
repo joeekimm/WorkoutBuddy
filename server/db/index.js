@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-// May not need these
+
 require('dotenv').config()
 require('dotenv').load()
 

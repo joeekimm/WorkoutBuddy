@@ -1,10 +1,8 @@
 const express = require('express');
-const jwt = require('express-jwt');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const router = require('./router/');
-const db = require('./db/config');
 
 const PORT = process.env.PORT || 5000;
 
