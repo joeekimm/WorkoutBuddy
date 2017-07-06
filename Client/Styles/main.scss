@@ -69,23 +69,14 @@ body {
   }
   @include breakpoint(small) {
     .nav-bar {
-      display: none;
-    }
-    .home {
-      @include flex(column, center, center);
-      p {
-        font-size: 150%;
-      }
-    }
-  }
-  @include breakpoint(medium) {
-    .nav-bar {
       @include flex(row, space-between, center);
       z-index: 2;
     }
     .home {
+      @include flex(column, center, center);
       p {
         font-size: 200%;
+        text-align: center;
       }
       .down {
         background-color: transparent;
@@ -100,12 +91,14 @@ body {
       }
     }
   }
-  @include breakpoint(large) {
+  @include breakpoint(medium) {
     .home {
       p {
-        font-size: 250%;
+        font-size: 300%;
       }
     }
+  }
+  @include breakpoint(large) {
   }
   .how-it-works {
     background-color: white;
