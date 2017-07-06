@@ -69,23 +69,14 @@ body {
   }
   @include breakpoint(small) {
     .nav-bar {
-      display: none;
-    }
-    .home {
-      @include flex(column, center, center);
-      p {
-        font-size: 150%;
-      }
-    }
-  }
-  @include breakpoint(medium) {
-    .nav-bar {
       @include flex(row, space-between, center);
       z-index: 2;
     }
     .home {
+      @include flex(column, center, center);
       p {
         font-size: 200%;
+        text-align: center;
       }
       .down {
         background-color: transparent;
@@ -99,13 +90,24 @@ body {
         }
       }
     }
-  }
-  @include breakpoint(large) {
-    .home {
-      p {
-        font-size: 250%;
+    .how-it-works {
+      @include flex(column, space-around, center);
+      text-align: center;
+      .gmap-container {
+        border-radius:8px;
+        height: 60%;
+        width: 80%;
       }
     }
+  }
+  @include breakpoint(medium) {
+    .home {
+      p {
+        font-size: 300%;
+      }
+    }
+  }
+  @include breakpoint(large) {
   }
   .how-it-works {
     background-color: white;
@@ -113,5 +115,9 @@ body {
     width: 100vw;
   }
 }
+
+/*************************/
+
+/*******GOOGLE-MAPS********/
 
 /*************************/

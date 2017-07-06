@@ -70,40 +70,48 @@ body {
       position: relative; }
   @media (min-width: 300px) {
     .home-wrapper .nav-bar {
-      display: none; }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2; }
     .home-wrapper .home {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center; }
       .home-wrapper .home p {
-        font-size: 150%; } }
-  @media (min-width: 768px) {
-    .home-wrapper .nav-bar {
+        font-size: 200%;
+        text-align: center; }
+      .home-wrapper .home .down {
+        background-color: transparent;
+        border-style: none;
+        position: absolute;
+        bottom: 2vh;
+        z-index: 2; }
+        .home-wrapper .home .down .move-downwards {
+          font-size: 50px;
+          color: white; }
+    .home-wrapper .how-it-works {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: space-around;
       align-items: center;
-      z-index: 2; }
+      text-align: center; }
+      .home-wrapper .how-it-works .gmap-container {
+        border-radius: 8px;
+        height: 60%;
+        width: 80%; } }
+  @media (min-width: 768px) {
     .home-wrapper .home p {
-      font-size: 200%; }
-    .home-wrapper .home .down {
-      background-color: transparent;
-      border-style: none;
-      position: absolute;
-      bottom: 2vh;
-      z-index: 2; }
-      .home-wrapper .home .down .move-downwards {
-        font-size: 50px;
-        color: white; } }
-  @media (min-width: 1080px) {
-    .home-wrapper .home p {
-      font-size: 250%; } }
+      font-size: 300%; } }
   .home-wrapper .how-it-works {
     background-color: white;
     height: 100vh;
     width: 100vw; }
 
+/*************************/
+/*******GOOGLE-MAPS********/
 /*************************/
 
 /*# sourceMappingURL=main.css.map */
