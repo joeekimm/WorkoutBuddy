@@ -68,6 +68,10 @@ body {
     .home-wrapper .home button {
       z-index: 2;
       position: relative; }
+  .home-wrapper .how-it-works {
+    background-color: #f4f8fc;
+    height: 100vh;
+    width: 100%; }
   @media (min-width: 300px) {
     .home-wrapper .nav-bar {
       display: flex;
@@ -105,13 +109,15 @@ body {
   @media (min-width: 768px) {
     .home-wrapper .home p {
       font-size: 300%; } }
-  .home-wrapper .how-it-works {
-    background-color: white;
-    height: 100vh;
-    width: 100vw; }
 
 /*************************/
 /*******GOOGLE-MAPS********/
+.map-marker {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%; }
+
 /*************************/
 
 /*# sourceMappingURL=main.css.map */

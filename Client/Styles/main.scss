@@ -67,6 +67,11 @@ body {
       position: relative;
     }
   }
+  .how-it-works {
+    background-color: #f4f8fc;
+    height: 100vh;
+    width: 100%;
+  }
   @include breakpoint(small) {
     .nav-bar {
       @include flex(row, space-between, center);
@@ -107,17 +112,17 @@ body {
       }
     }
   }
-  @include breakpoint(large) {
-  }
-  .how-it-works {
-    background-color: white;
-    height: 100vh;
-    width: 100vw;
-  }
 }
 
 /*************************/
 
 /*******GOOGLE-MAPS********/
+
+.map-marker {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+}
 
 /*************************/
