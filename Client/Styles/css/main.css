@@ -12,9 +12,42 @@ body {
 
 /***********************/
 /******Component Ternary Classes*********/
-#nav-scroll {
+.nav-scroll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-color .2s ease-in;
+  transition: background-color .2s ease-in;
   background-color: white;
-  color: mediumspringgreen; }
+  color: #849fff;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 10vh;
+  z-index: 4; }
+  .nav-scroll h2 {
+    margin-left: 5%; }
+  .nav-scroll button {
+    margin-right: 5%;
+    background-color: transparent;
+    border-style: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 100%;
+    color: #849fff; }
+
+.low-shadow {
+  -webkit-box-shadow: 0 2px 1px -1px lightgray;
+          box-shadow: 0 2px 1px -1px lightgray; }
 
 /****************************************/
 /******HOME PAGE*****/
@@ -33,14 +66,18 @@ body {
       -ms-flex-align: center;
           align-items: center; }
   .home-wrapper .nav-bar {
+    -webkit-transition: background-color .2s ease-in;
+    transition: background-color .2s ease-in;
     position: fixed;
     top: 0;
-    width: 90vw;
-    left: 5vw;
+    width: 100vw;
     height: 10vh;
     background-color: transparent;
     color: white; }
+    .home-wrapper .nav-bar h2 {
+      margin-left: 5%; }
     .home-wrapper .nav-bar button {
+      margin-right: 5%;
       background-color: transparent;
       border-style: none;
       font-family: "Poppins", sans-serif;
@@ -77,26 +114,11 @@ body {
     .home-wrapper .home button {
       z-index: 2;
       position: relative; }
+  .home-wrapper .how-it-works {
+    background-color: #f4f7f9;
+    height: 100vh;
+    width: 100%; }
   @media (min-width: 300px) {
-    .home-wrapper .nav-bar {
-      display: none; }
-    .home-wrapper .home {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; }
-      .home-wrapper .home p {
-        font-size: 150%; } }
-  @media (min-width: 768px) {
     .home-wrapper .nav-bar {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -112,23 +134,129 @@ body {
           -ms-flex-align: center;
               align-items: center;
       z-index: 2; }
+    .home-wrapper .home {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .home-wrapper .home p {
+        font-size: 200%;
+        text-align: center; }
+      .home-wrapper .home .down {
+        background-color: transparent;
+        border-style: none;
+        position: absolute;
+        bottom: 2vh;
+        z-index: 2; }
+        .home-wrapper .home .down .move-downwards {
+          font-size: 50px;
+          color: white; }
+    .home-wrapper .how-it-works {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      text-align: center; }
+      .home-wrapper .how-it-works .app-usage {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        font-weight: lighter;
+        font-size: 90%; }
+        .home-wrapper .how-it-works .app-usage .city-filter {
+          font-family: "Poppins", sans-serif;
+          font-size: 100%;
+          font-size: 120%;
+          text-indent: 15px;
+          border-style: none;
+          color: #849fff; }
+      .home-wrapper .how-it-works .gmap-container {
+        border-radius: 8px;
+        height: 60%;
+        width: 80%; } }
+  @media (min-width: 768px) {
     .home-wrapper .home p {
-      font-size: 200%; }
-    .home-wrapper .home .down {
-      background-color: transparent;
-      border-style: none;
-      position: absolute;
-      bottom: 2vh;
-      z-index: 2; }
-      .home-wrapper .home .down .move-downwards {
-        font-size: 50px;
-        color: white; } }
-  @media (min-width: 1080px) {
-    .home-wrapper .home p {
-      font-size: 250%; } }
-  .home-wrapper .how-it-works {
-    background-color: white;
-    height: 100vh;
-    width: 100vw; }
+      font-size: 300%; }
+    .home-wrapper .how-it-works .app-usage {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      font-size: 100%; } }
+
+/*************************/
+/*******ANIMATIONS********/
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.fade-in {
+  -webkit-animation: fade-in .4s 1;
+          animation: fade-in .4s 1; }
+
+.fade-out {
+  -webkit-animation: fade-out .3s 1;
+          animation: fade-out .3s 1; }
+
+/*************************/
+/*******GOOGLE-MAPS********/
+.map-marker {
+  width: 30px;
+  height: 30px; }
 
 /*************************/

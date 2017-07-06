@@ -2,6 +2,8 @@
 import express from 'express';
 
 import UserQueries from './UserQueries';
+
+import PersonalityInsightsV3  from 'watson-developer-cloud/personality-insights/v3';
 // const UserQueries = require('./UserQueries');
 const router = express.Router();
 const User = new UserQueries();
@@ -57,5 +59,32 @@ router.put('/updateUser', async (req, res) => {
     res.status(500).send(error);
   }
 });
+
+router.put('/updatePersonality', async (req, res) => {
+  try {
+    const personality_insights = new PersonalityInsightsV3({
+      username: '80ab8395-6efc-4188-a88a-c58f30353f10',
+      password: 'DwOUcTYNy0yZ',
+      version_date: '2016-10-19'
+    });
+
+    personality_insights.profile({
+      text: req.body,
+      consumption_preferences: true
+      },
+      function (err, response) {
+        if (err) {
+          console.log('error:', err);
+        } else {
+          console.log(JSON.stringify(response, null, 2));
+          // result = await User.updatePersonality(req.body);
+          // res.status(200).send(result);
+        }
+    });
+  } catch (error) {
+    console.log('Error in the updatePersonality route');
+    res.status(500).send(error);
+  }
+})
 
 module.exports = router;
