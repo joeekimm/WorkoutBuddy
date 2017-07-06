@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { login } from '../Actions/LogActions';
 import { connect } from 'react-redux';
 import TweenLite from 'gsap';
 import scrollTo from '../../node_modules/gsap/ScrollToPlugin';
+import { login } from '../Actions/LogActions';
 
 
 class Home extends Component {
@@ -17,29 +17,29 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleNavScroll )
+    window.addEventListener('scroll', this.handleNavScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleNavScroll )
+    window.removeEventListener('scroll', this.handleNavScroll);
   }
 
   handlePageScroll(id) {
-    TweenLite.to(window, .5, {scrollTo: `#${id}`});
+    TweenLite.to(window, 0.5, { scrollTo: `#${id}` });
   }
 
   handleNavScroll() {
-    this.setState({ pageScrolling: true })
+    this.setState({ pageScrolling: true });
   }
 
   render() {
-    const { login,history } = this.props;
+    const { login, history } = this.props;
     return (
       <div className="home-wrapper">
-       <nav className="nav-bar">
-         <h2>WorkoutBuddy</h2>
-         <button onClick={() => { login(history) }}>Log in</button>
-       </nav>
+        <nav className="nav-bar">
+          <h2>WorkoutBuddy</h2>
+          <button onClick={() => { login(history); }}>Log in</button>
+        </nav>
         <div className="home">
           <div />
           <p>
@@ -47,7 +47,7 @@ class Home extends Component {
             connects fitness freaks together!
           </p>
           <button className="area">see how many people around your area</button>
-          <button onClick={ () => this.handlePageScroll('discover') } className="down">
+          <button onClick={() => this.handlePageScroll('discover')} className="down">
             <i className="animated pulse infinite fa fa-chevron-down move-downwards" aria-hidden="true" />
           </button>
         </div>
@@ -55,7 +55,7 @@ class Home extends Component {
           How It Works
         </div>
       </div>
-    )
+    );
   }
 }
 

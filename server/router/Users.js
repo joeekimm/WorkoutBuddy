@@ -4,11 +4,11 @@ const User = require('../db/config').User;
 
 router.post('/', (req, res) => {
   console.log('we hit the correct route , and heres the body :)', req.body);
-  User.findOrCreate({ where: { 
+  User.findOrCreate({ where: {
     id: req.body.id,
-  }})
-    .spread((user,created) => {
-      if(created) {
+  } })
+    .spread((user, created) => {
+      if (created) {
         res.status(200).send('user was created');
       } else {
         res.status(200).send('user already exists');

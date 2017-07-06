@@ -1,8 +1,8 @@
 export default class UserQuerySelector {
 
-  postUser({ id, firstName, lastName, personalityType, preference, schedule, bodySpecs }) {
-    return `INSERT INTO USERS (id, firstName, lastName, personalityType, preference, schedule, bodySpecs)
-            VALUES (${id}, '${firstName}', '${lastName}', '${personalityType}', '${preference}', '${schedule}', '${bodySpecs}')`;
+  postUser({ id }) {
+    return `INSERT INTO USERS (id)
+            VALUES ('${id}');`;
   }
 
   getUser(id) {

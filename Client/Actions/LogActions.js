@@ -35,6 +35,7 @@ export const login = (history) => {
       console.log('this is the body being sent' ,body);
       axios.post(`/api/users`, body)
         .then((res) => {
+        console.log(res, 'this is the res');
           if(res.data === 'user was created') {
             history.push('/workoutinfo');
           }

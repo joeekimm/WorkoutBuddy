@@ -21,10 +21,10 @@ router.post('/', async (req, res) => {
   try {
     console.log('this is the req.body', req.body);
     result = await User.addUser(req.body);
-    res.status(200).send(result);
+    res.status(200).send('user was created');
   } catch (error) {
-    console.log('Error in the addUser route');
-    res.status(500).send(error);
+    console.log('user already exists  ', error);
+    res.status(200).send('user already exists');
   }
 });
 
