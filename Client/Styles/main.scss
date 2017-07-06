@@ -92,6 +92,7 @@ body {
     }
     .how-it-works {
       @include flex(column, space-around, center);
+      text-align: center;
       .gmap-container {
         border-radius:8px;
         height: 60%;

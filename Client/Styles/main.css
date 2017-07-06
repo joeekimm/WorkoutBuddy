@@ -96,7 +96,8 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      align-items: center; }
+      align-items: center;
+      text-align: center; }
       .home-wrapper .how-it-works .gmap-container {
         border-radius: 8px;
         height: 60%;
