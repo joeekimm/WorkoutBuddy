@@ -90,6 +90,14 @@ body {
         }
       }
     }
+    .how-it-works {
+      @include flex(column, space-around, center);
+      .gmap-container {
+        border-radius:8px;
+        height: 60%;
+        width: 80%;
+      }
+    }
   }
   @include breakpoint(medium) {
     .home {
@@ -106,5 +114,9 @@ body {
     width: 100vw;
   }
 }
+
+/*************************/
+
+/*******GOOGLE-MAPS********/
 
 /*************************/

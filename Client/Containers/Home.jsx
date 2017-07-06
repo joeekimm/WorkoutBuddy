@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import TweenLite from 'gsap';
 import scrollTo from '../../node_modules/gsap/ScrollToPlugin';
 import { login } from '../Actions/LogActions';
+import GoogleMap from '../Components/GoogleMaps';
 
 
 class Home extends Component {
@@ -52,7 +53,11 @@ class Home extends Component {
           </button>
         </div>
         <div id="discover" className="how-it-works">
-          How It Works
+          <h1>Find workout partners near you</h1>
+          <select>
+            <option>hi</option>
+          </select>
+          <GoogleMap />
         </div>
       </div>
     );
