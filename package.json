@@ -33,6 +33,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "express-jwt": "^5.3.0",
+    "faker": "^4.1.0",
     "google-map-react": "^0.24.0",
     "gsap": "^1.20.0",
     "har-schema": "^2.0.0",
