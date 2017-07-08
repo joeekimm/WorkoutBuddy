@@ -8,6 +8,7 @@ const Review = require('./Reviews/ReviewModel');
 // const Friend = require('./Friends/FriendModel');
 const BodyPart = require('./BodyParts/BodyPartModel');
 const Accomplishment = require('./Accomplishments/AccomplishmentModel');
+const City = require('./City/CityModel');
 
 User.hasMany(Workout, { foreignKey: { name: 'user_id' }, onDelete: 'CASCADE' });
 Workout.belongsTo(User, { foreignKey: { name: 'user_id' }, onDelete: 'CASCADE' });
@@ -31,6 +32,7 @@ module.exports = {
   Message,
   Review,
   // Friend,
+  City,
   BodyPart,
   Accomplishment,
 }
