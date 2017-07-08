@@ -19,6 +19,7 @@ const input = './Client/Styles/main.scss';
 const output = './Client/Styles/css';
 const models = {
   City: db.City,
+  User: db.User,
 };
 
 gulp.task('sass', () => gulp.src(input)
@@ -62,12 +63,12 @@ gulp.task('sync', (cb) => {
     .catch((err) => { cb(err); });
 });
 
-// gulp.task('seed:seed', {
+/** **************MAKING ALL THIS SEED DATA BRUH*********************/
 
-// })
+/** ******************************************************************/
 
 gulp.task('seed', (cb) => {
-  SequelizeFixtures.loadFile('./server/db/popularcity.json', models)
+  SequelizeFixtures.loadFiles(['./server/db/popularcity.json', './server/db/UserSeed.js'], models)
     .then(() => {
       cb();
     })
@@ -76,7 +77,6 @@ gulp.task('seed', (cb) => {
     });
 });
 
-// gulp.task('seed', ['sync', 'seed:seed']);
 
 gulp.task('nodemon', () => {
   const stream = nodemon({
