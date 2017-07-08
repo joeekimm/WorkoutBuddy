@@ -2,20 +2,24 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 // const sourcemaps = require('gulp-sourcemaps');
+const SequelizeFixtures = require('sequelize-fixtures');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const nodemon = require('gulp-nodemon');
 const env = require('gulp-env');
 const util = require('gulp-util');
-const Promise = require('bluebird');
 const db = require('./server/db/config');
 const database = require('./server/db');
+// const Cities = require('./server/db/City/CityModel');
 
 // Promise.promisifyAll(database);
 // ******FRONTEND GULP TASKS******* //
 
 const input = './Client/Styles/main.scss';
 const output = './Client/Styles/css';
+const models = {
+  City: db.City,
+};
 
 gulp.task('sass', () => gulp.src(input)
     .pipe(plumber())
@@ -52,6 +56,7 @@ gulp.task('sync', (cb) => {
     .then(() => { db.Message.sync({ force: true }); })
     .then(() => { db.BodyPart.sync({ force: true }); })
     .then(() => { db.Review.sync({ force: true }); })
+    .then(() => { db.City.sync({ force: true }); })
     .then(() => { database.query('SET FOREIGN_KEY_CHECKS=1'); })
     .then(() => { cb(); })
     .catch((err) => { cb(err); });
@@ -60,6 +65,16 @@ gulp.task('sync', (cb) => {
 // gulp.task('seed:seed', {
 
 // })
+
+gulp.task('seed', (cb) => {
+  SequelizeFixtures.loadFile('./server/db/popularcity.json', models)
+    .then(() => {
+      cb();
+    })
+    .catch((err) => {
+      cb(err);
+    });
+});
 
 // gulp.task('seed', ['sync', 'seed:seed']);
 

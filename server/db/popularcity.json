@@ -1,0 +1,129 @@
+
+  [
+    {
+      "model": "City",
+      "data": {
+        "id": 1,
+        "name": "New York",
+        "lat": 40.4773991,
+        "lng": -74.25908989999999
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 2,
+        "name": "Los Angeles",
+        "lat": 34.0522342,
+        "lng": -118.2436849
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 3,
+        "name": "Chicago",
+        "lat": 41.8781136,
+        "lng": -87.6297982
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 4,
+        "name": "Houston",
+        "lat": 29.7604267,
+        "lng": -95.3698028
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 5,
+        "name": "Phoenix",
+        "lat": 33.4483771,
+        "lng": -112.0740373
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 6,
+        "name": "Philadelphia",
+        "lat": 39.9525839,
+        "lng": -75.1652215
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 7,
+        "name" : "San Antonio",
+        "lat": 29.4241219,
+        "lng": -98.49362819999999
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 8,
+        "name" : "San Diego",
+        "lat": 32.715738,
+        "lng": -117.1610838
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 9,
+        "name" : "Dallas",
+        "lat": 32.7766642,
+        "lng": -96.79698789999999
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 10,
+        "name" : "San Jose",
+        "lat": 37.3382082,
+        "lng": -121.8863286
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 11,
+        "name" : "Jacksonville",
+        "lat": 30.3321838,
+        "lng": -81.65565099999999
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 12,
+        "name" : "San Francisco",
+        "lat": 37.70339999999999,
+        "lng": -122.527
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 13,
+        "name" : "Columbus",
+        "lat": 39.9611755,
+        "lng": -82.99879419999999
+      }
+    },
+    {
+      "model": "City",
+      "data": {
+        "id": 14,
+        "name" : "Indianapolis",
+        "lat": 39.768403,
+        "lng": -86.158068
+      }
+    }
+  ]

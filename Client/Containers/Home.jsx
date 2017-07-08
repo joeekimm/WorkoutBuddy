@@ -11,6 +11,7 @@ class Home extends Component {
     super(props);
     this.state = {
       pageScrolling: false,
+      cities: [],
     };
 
     this.handlePageScroll = this.handlePageScroll.bind(this);

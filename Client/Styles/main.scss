@@ -72,6 +72,7 @@ body {
     height: 100vh;
     width: 100%;
   }
+
   @include breakpoint(small) {
     .nav-bar {
       @include flex(row, space-between, center);
