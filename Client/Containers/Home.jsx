@@ -38,7 +38,11 @@ class Home extends Component {
   }
 
   handleNavScroll() {
-    this.setState({ pageScrolling: true });
+    if (!document.body.scrollTop) {
+      this.setState({ pageScrolling: false });
+    } else {
+      this.setState({ pageScrolling: true });
+    }
   }
 
   fetchNearbyUsers(lat) {
@@ -49,9 +53,10 @@ class Home extends Component {
 
   render() {
     const { login, history, cities } = this.props;
+    console.log(this.state);
     return (
       <div className="home-wrapper">
-        <nav className="nav-bar">
+        <nav className={this.state.pageScrolling ? 'nav-scroll low-shadow' : 'nav-bar'}>
           <h2>WorkoutBuddy</h2>
           <button onClick={() => { login(history); }}>Log in</button>
         </nav>
@@ -68,9 +73,12 @@ class Home extends Component {
         </div>
         <div id="discover" className="how-it-works">
           <h1>Find workout partners near you</h1>
-          <select onChange={(e) => { this.fetchNearbyUsers(e.target.value); }}>
-            {'data' in cities ? cities.data[0].map(city => <Cities key={city.id} city={city} />) : []}
-          </select>
+          <div className="app-usage">
+            <h2>See people using the app in</h2>
+            <select className="city-filter" onChange={(e) => { this.fetchNearbyUsers(e.target.value); }}>
+              {'data' in cities ? cities.data[0].map(city => <Cities key={city.id} city={city} />) : []}
+            </select>
+          </div>
           <GoogleMap nearbyUsers={this.state.nearbyUsers} />
         </div>
       </div>
