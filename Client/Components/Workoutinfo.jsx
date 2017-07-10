@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-// import PersonalityInsightsV3 from 'watson-developer-cloud/personality-insights/v3';
+import axios from 'axios';
+import { Form, Button } from 'semantic-ui-react'
 
-// const personality_insights = new PersonalityInsightsV3({
-//   username: "80ab8395-6efc-4188-a88a-c58f30353f10",
-//   password: "DwOUcTYNy0yZ",
-//   version_date: '2016-10-19'
-// });
+// Questions for personality test:
+  // What do you see yourself doing in your dream job?
+  // Describe the type of place you would choose to live in
+  // What do you do on your free time / hobbies?
 
-
-class Workoutinfo extends Component {
+export default class Workoutinfo extends Component {
   constructor(props) {
     super(props);
     
@@ -17,6 +16,7 @@ class Workoutinfo extends Component {
     }
 
     this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   handleTextChange(event) {
@@ -25,18 +25,24 @@ class Workoutinfo extends Component {
     }, console.log(this.state.ibmtext))
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    const user_id = JSON.parse(localStorage.profile).user_id;
+    axios.put('http://localhost:5000/api/users/updatePersonality', {
+      text: this.state.ibmtext,
+      id: user_id
+    })
+      .then((res) => console.log(res.data))
+  }
+
   render() {
+    // console.log(JSON.parse(localStorage.profile).user_id);
     return(
-      <div>
-        <form>
-          <label>Input 100 words</label>
-          <br/>
-          <textarea type="text"
-            onChange={(event) => this.handleTextChange(event)}/>
-        </form>
-      </div>
+      <Form onSubmit={(event) => this.handleSubmit(event)}>
+        <Form.TextArea onChange={(event) => this.handleTextChange(event)} label='Question 1' placeholder='What do you see yourself doing in your dream job?' />
+        {/*<Textarea label="Textarea" floatingLabel={true} defaultValue="Value on load" />*/}
+        <Button type='submit'>Submit</Button>
+      </Form>
     );
   }
 }
-
-export default Workoutinfo;
