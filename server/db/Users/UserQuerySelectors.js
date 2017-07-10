@@ -6,13 +6,13 @@ export default class UserQuerySelector {
   }
 
   getUser(id) {
-    return `SELECT DISTINCT * FROM USERS WHERE id = ${id}`;
+    return `SELECT DISTINCT * FROM USERS WHERE id = '${id}'`;
   }
 
   getUserAccAndWorkouts(id) {
-    return `SELECT * FROM USERS WHERE id = ${id}
-            LEFT OUTER JOIN ACCOMPLISHMENTS ON user_id = ${id}
-            LEFT OUTER JOIN WORKOUTS ON user_id = ${id}`;
+    return `SELECT * FROM USERS WHERE id = '${id}'
+            LEFT OUTER JOIN ACCOMPLISHMENTS ON user_id = '${id}'
+            LEFT OUTER JOIN WORKOUTS ON user_id = '${id}'`;
   }
 
   putUserInfo({ id, firstName, lastName, personalityType, preference, schedule, bodySpecs }) {
@@ -23,7 +23,7 @@ export default class UserQuerySelector {
             preference = '${preference}',
             schedule = '${schedule}',
             bodySpecs = '${bodySpecs}'
-            WHERE id = ${id}`;
+            WHERE id = '${id}'`;
   }
 
   deleteUser(id) {
