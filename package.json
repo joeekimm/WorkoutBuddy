@@ -57,6 +57,7 @@
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
     "require": "^2.4.20",
+    "semantic-ui-react": "^0.71.0",
     "sequelize": "^4.1.0",
     "sequelize-fixtures": "^0.6.0",
     "sigmund": "^1.0.1",
