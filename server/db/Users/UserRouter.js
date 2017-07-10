@@ -20,7 +20,6 @@ router.get('/getUser/:id', async (req, res) => {
 router.get('/nearbyUsers/:location', async (req, res) => {
   try {
     const lat = Number(req.params.location);
-    console.log(lat);
     result = await User.fetchNearbyUsers(lat);
     res.status(200).send(result);
   } catch (error) {
@@ -31,7 +30,6 @@ router.get('/nearbyUsers/:location', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    console.log('this is the req.body', req.body);
     result = await User.addUser(req.body);
     res.status(200).send('user was created');
   } catch (error) {

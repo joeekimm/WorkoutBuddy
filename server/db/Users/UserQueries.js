@@ -21,7 +21,6 @@ export default class UserQueries extends UserQuerySelectors {
   }
 
   async addUser(body) {
-    console.log(body);
     const queryString = super.postUser(body);
     const result = db.query(queryString);
     return result;

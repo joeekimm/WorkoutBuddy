@@ -15,6 +15,7 @@ class Home extends Component {
     this.state = {
       pageScrolling: false,
       nearbyUsers: {},
+      currentLat: { lat: 40.4744, lng: -74.2591 },
     };
 
     this.handlePageScroll = this.handlePageScroll.bind(this);
@@ -38,12 +39,21 @@ class Home extends Component {
   }
 
   handleNavScroll() {
-    this.setState({ pageScrolling: true });
+    if (!document.body.scrollTop) {
+      this.setState({ pageScrolling: false });
+    } else {
+      this.setState({ pageScrolling: true });
+    }
   }
 
-  fetchNearbyUsers(lat) {
-    axios.get(`/api/users/nearbyUsers/${lat}`)
+  fetchNearbyUsers(loc) {
+    let location = JSON.parse(loc);
+    axios.get(`/api/users/nearbyUsers/${location.lat}`)
       .then(res => this.setState({ nearbyUsers: res }))
+      .then(() => {
+        location = { lat: location.lat, lng: location.lng };
+        this.setState({ currentLat: location });
+      })
       .catch(err => console.log(err));
   }
 
@@ -51,7 +61,7 @@ class Home extends Component {
     const { login, history, cities } = this.props;
     return (
       <div className="home-wrapper">
-        <nav className="nav-bar">
+        <nav className={this.state.pageScrolling ? 'nav-scroll low-shadow' : 'nav-bar'}>
           <h2>WorkoutBuddy</h2>
           <button onClick={() => { login(history); }}>Log in</button>
         </nav>
@@ -68,10 +78,13 @@ class Home extends Component {
         </div>
         <div id="discover" className="how-it-works">
           <h1>Find workout partners near you</h1>
-          <select onChange={(e) => { this.fetchNearbyUsers(e.target.value); }}>
-            {'data' in cities ? cities.data[0].map(city => <Cities key={city.id} city={city} />) : []}
-          </select>
-          <GoogleMap nearbyUsers={this.state.nearbyUsers} />
+          <div className="app-usage">
+            <h2>See people using the app in</h2>
+            <select className="city-filter" onChange={(e) => { this.fetchNearbyUsers(e.target.value); }}>
+              {'data' in cities ? cities.data[0].map(city => <Cities key={city.id} city={city} />) : []}
+            </select>
+          </div>
+          <GoogleMap center={this.state.currentLat} nearbyUsers={this.state.nearbyUsers} />
         </div>
       </div>
     );

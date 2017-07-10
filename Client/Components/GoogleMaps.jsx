@@ -8,12 +8,11 @@ class GoogleMap extends Component {
     super(props);
   }
   render() {
-    console.log(this.props);
     return (
       <div className="gmap-container">
         <GoogleMapReact
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          center={this.props.center}
+          zoom={13}
         >
           {'data' in this.props.nearbyUsers ? this.props.nearbyUsers.data[0].map(user => <Marker lat={user.lat} lng={user.lng} text={user.firstName} />) : []}
         </GoogleMapReact>
@@ -21,9 +20,5 @@ class GoogleMap extends Component {
     );
   }
 }
-GoogleMap.defaultProps = {
-  center: { lat: 34.0522, lng: -118.244 },
-  zoom: 13,
-};
 
 export default GoogleMap;

@@ -8,153 +8,202 @@ body {
   margin: 0;
   @include font($main-font);
 }
+
 /***********************/
-
-
 
 
 /******Component Ternary Classes*********/
 
-#nav-scroll {
+.nav-scroll {
+  @include flex(row, space-between, center);
+  transition: background-color .2s ease-in;
   background-color: white;
-  color: mediumspringgreen;
+  color: $attentive;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 10vh;
+  z-index: 4;
+  h2{
+    margin-left: 5%;
+  }
+  button {
+    margin-right: 5%;
+    background-color: transparent;
+    border-style: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 100%;
+    color: $attentive;
+  }
 }
 
-/****************************************/
+.low-shadow {
+  box-shadow: 0 2px 1px -1px lightgray;
+}
+
+  /****************************************/
 
 
 
 
-/******HOME PAGE*****/
 
 
-.home-wrapper {
-  @include flex(column, center, center);
-  .nav-bar {
-    position: fixed;
-    top: 0;
-    width: 90vw;
-    left: 5vw;
-    height: 10vh;
-    background-color: transparent;
-    color: white;
-    button {
-      background-color: transparent;
-      border-style: none;
-      font-family: "Poppins", sans-serif;
-      font-size: 100%;
-      color: white;
-    }
-  }
-  .home {
-    @include full-bg('http://gdurl.com/t3Ah');
-    color: white;
-    p {
-      z-index: 2;
-      margin-bottom: 10%;
-    }
-    div {
-      @include dark-overlay;
-    }
-    .area {
-      @include button($main-font,$attentive, white, 6px, 6vh, auto);
-      border-style: none;
-      padding: 1.5%;
-      line-height: 1.5%;
-    }
-    button {
-      z-index: 2;
-      position: relative;
-    }
-  }
-  .how-it-works {
-    background-color: #f4f7f9;
-    height: 100vh;
-    width: 100%;
-  }
+  /******HOME PAGE*****/
 
-  @include breakpoint(small) {
+
+  .home-wrapper {
+    @include flex(column, center, center);
     .nav-bar {
-      @include flex(row, space-between, center);
-      z-index: 2;
-    }
-    .home {
-      @include flex(column, center, center);
-      p {
-        font-size: 200%;
-        text-align: center;
+      transition: background-color .2s ease-in;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      height: 10vh;
+      background-color: transparent;
+      color: white;
+      h2{
+        margin-left: 5%;
       }
-      .down {
+      button {
+        margin-right: 5%;
         background-color: transparent;
         border-style: none;
-        position: absolute;
-        bottom: 2vh;
+        font-family: "Poppins", sans-serif;
+        font-size: 100%;
+        color: white;
+      }
+    }
+    .home {
+      @include full-bg('http://gdurl.com/t3Ah');
+      color: white;
+      p {
         z-index: 2;
-        .move-downwards {
-          font-size: 50px;
-          color: white;
-        }
+        margin-bottom: 10%;
+      }
+      div {
+        @include dark-overlay;
+      }
+      .area {
+        @include button($main-font,$attentive, white, 6px, 6vh, auto);
+        border-style: none;
+        padding: 1.5%;
+        line-height: 1.5%;
+      }
+      button {
+        z-index: 2;
+        position: relative;
       }
     }
     .how-it-works {
-      @include flex(column, space-around, center);
-      text-align: center;
-      .gmap-container {
-        border-radius:8px;
-        height: 60%;
-        width: 80%;
+      background-color: #f4f7f9;
+      height: 100vh;
+      width: 100%;
+    }
+
+    @include breakpoint(small) {
+      .nav-bar {
+        @include flex(row, space-between, center);
+        z-index: 2;
+      }
+      .home {
+        @include flex(column, center, center);
+        p {
+          font-size: 200%;
+          text-align: center;
+        }
+        .down {
+          background-color: transparent;
+          border-style: none;
+          position: absolute;
+          bottom: 2vh;
+          z-index: 2;
+          .move-downwards {
+            font-size: 50px;
+            color: white;
+          }
+        }
+      }
+      .how-it-works {
+        @include flex(column, space-around, center);
+        text-align: center;
+        .app-usage {
+          @include flex(column, center, center);
+          font-weight: lighter;
+          font-size: 90%;
+          .city-filter {
+            @include font($main-font);
+            font-size: 120%;
+            text-indent: 15px;
+            border-style: none;
+            color: $attentive;
+          }
+        }
+        .gmap-container {
+          border-radius:8px;
+          height: 60%;
+          width: 80%;
+        }
+      }
+    }
+    @include breakpoint(medium) {
+      .home {
+        p {
+          font-size: 300%;
+        }
+      }
+      .how-it-works {
+        .app-usage {
+          @include flex(row, center, center);
+          font-size: 100%;
+        }
       }
     }
   }
-  @include breakpoint(medium) {
-    .home {
-      p {
-        font-size: 300%;
-      }
+
+  /*************************/
+
+
+
+  /*******ANIMATIONS********/
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
-}
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .fade-in {
+    animation: fade-in .4s 1;
+  }
+
+  .fade-out {
+    animation: fade-out .3s 1;
+  }
+
+  /*************************/
+
+
+
+  /*******GOOGLE-MAPS********/
+
+  .map-marker {
+    width: 30px;
+    height: 30px;
+  }
+
 
 /*************************/
 
 
 
-/*******ANIMATIONS********/
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.fade-in {
-  animation: fade-in .4s 1;
-}
-
-.fade-out {
-  animation: fade-out .3s 1;
-}
-
-/*************************/
-
-
-
-/*******GOOGLE-MAPS********/
-
-.map-marker {
-  width: 60px;
-  height: 60px;
-}
-
-/*************************/
