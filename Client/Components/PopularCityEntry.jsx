@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PopCities = ({ city }) => (
-  <option>{city.name}</option>
+  <option value={city.lat}>{city.name}</option>
 );
 
 export default PopCities;

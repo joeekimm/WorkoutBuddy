@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { logout } from '../Actions/LogActions';
 import { connect } from 'react-redux';
+import { logout } from '../Actions/LogActions';
 
 
 class Dashboard extends Component {
@@ -10,12 +10,13 @@ class Dashboard extends Component {
 
   render() {
     const { logout, history } = this.props;
-    return(
+    return (
       <div>
         dashboard hoooooor
         <button onClick={() => {
           logout(history);
-        }}>logout</button>
+        }}
+        >logout</button>
       </div>
     );
   }

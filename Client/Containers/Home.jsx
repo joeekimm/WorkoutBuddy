@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 import TweenLite from 'gsap';
 import scrollTo from '../../node_modules/gsap/ScrollToPlugin';
 import { login } from '../Actions/LogActions';
@@ -13,16 +14,19 @@ class Home extends Component {
     super(props);
     this.state = {
       pageScrolling: false,
+      nearbyUsers: {},
     };
 
     this.handlePageScroll = this.handlePageScroll.bind(this);
     this.handleNavScroll = this.handleNavScroll.bind(this);
+    this.fetchNearbyUsers = this.fetchNearbyUsers.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { FetchCitiesAction } = this.props;
     window.addEventListener('scroll', this.handleNavScroll);
-    FetchCitiesAction();
+    await FetchCitiesAction();
+    await this.fetchNearbyUsers(this.props.cities.data[0][0].lat);
   }
 
   componentWillUnmount() {
@@ -37,9 +41,14 @@ class Home extends Component {
     this.setState({ pageScrolling: true });
   }
 
+  fetchNearbyUsers(lat) {
+    axios.get(`/api/users/nearbyUsers/${lat}`)
+      .then(res => this.setState({ nearbyUsers: res }))
+      .catch(err => console.log(err));
+  }
+
   render() {
     const { login, history, cities } = this.props;
-    console.log(this.props);
     return (
       <div className="home-wrapper">
         <nav className="nav-bar">
@@ -59,10 +68,10 @@ class Home extends Component {
         </div>
         <div id="discover" className="how-it-works">
           <h1>Find workout partners near you</h1>
-          <select>
+          <select onChange={(e) => { this.fetchNearbyUsers(e.target.value); }}>
             {'data' in cities ? cities.data[0].map(city => <Cities key={city.id} city={city} />) : []}
           </select>
-          <GoogleMap />
+          <GoogleMap nearbyUsers={this.state.nearbyUsers} />
         </div>
       </div>
     );
