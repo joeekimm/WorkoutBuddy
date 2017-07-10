@@ -15,6 +15,7 @@ class Home extends Component {
     this.state = {
       pageScrolling: false,
       nearbyUsers: {},
+      currentLat: { lat: 40.4744, lng: -74.2591 },
     };
 
     this.handlePageScroll = this.handlePageScroll.bind(this);
@@ -45,15 +46,19 @@ class Home extends Component {
     }
   }
 
-  fetchNearbyUsers(lat) {
-    axios.get(`/api/users/nearbyUsers/${lat}`)
+  fetchNearbyUsers(loc) {
+    let location = JSON.parse(loc);
+    axios.get(`/api/users/nearbyUsers/${location.lat}`)
       .then(res => this.setState({ nearbyUsers: res }))
+      .then(() => {
+        location = { lat: location.lat, lng: location.lng };
+        this.setState({ currentLat: location });
+      })
       .catch(err => console.log(err));
   }
 
   render() {
     const { login, history, cities } = this.props;
-    console.log(this.state);
     return (
       <div className="home-wrapper">
         <nav className={this.state.pageScrolling ? 'nav-scroll low-shadow' : 'nav-bar'}>
@@ -79,7 +84,7 @@ class Home extends Component {
               {'data' in cities ? cities.data[0].map(city => <Cities key={city.id} city={city} />) : []}
             </select>
           </div>
-          <GoogleMap nearbyUsers={this.state.nearbyUsers} />
+          <GoogleMap center={this.state.currentLat} nearbyUsers={this.state.nearbyUsers} />
         </div>
       </div>
     );
