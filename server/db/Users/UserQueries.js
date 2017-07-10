@@ -41,6 +41,12 @@ export default class UserQueries extends UserQuerySelectors {
     return result;
     // return await db.queryAsync(queryString);
   }
+
+  async fetchNearbyUsers(lat) {
+    const queryString = super.findNearbyUsers(lat);
+    const result = db.query(queryString);
+    return result;
+  }
 }
 
 // module.exports = {

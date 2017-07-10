@@ -69,7 +69,7 @@ body {
       z-index: 2;
       position: relative; }
   .home-wrapper .how-it-works {
-    background-color: #f4f8fc;
+    background-color: #f4f7f9;
     height: 100vh;
     width: 100%; }
   @media (min-width: 300px) {
@@ -111,12 +111,28 @@ body {
       font-size: 300%; } }
 
 /*************************/
+/*******ANIMATIONS********/
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+.fade-in {
+  animation: fade-in .4s 1; }
+
+.fade-out {
+  animation: fade-out .3s 1; }
+
+/*************************/
 /*******GOOGLE-MAPS********/
 .map-marker {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  border-radius: 50%; }
+  width: 60px;
+  height: 60px; }
 
 /*************************/
 

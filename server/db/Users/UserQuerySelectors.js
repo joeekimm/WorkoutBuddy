@@ -30,4 +30,8 @@ export default class UserQuerySelector {
     return `DELETE FROM USERS WHERE id = ${id}`;
   }
 
+  findNearbyUsers(lat) {
+    return `SELECT * FROM USERS WHERE lat > ${lat}
+             && lat < ${lat + 0.01} `;
+  }
 }

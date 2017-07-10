@@ -17,6 +17,18 @@ router.get('/getUser/:id', async (req, res) => {
   }
 });
 
+router.get('/nearbyUsers/:location', async (req, res) => {
+  try {
+    const lat = Number(req.params.location);
+    console.log(lat);
+    result = await User.fetchNearbyUsers(lat);
+    res.status(200).send(result);
+  } catch (error) {
+    console.log('Error in finding nearbyUsers');
+    res.status(500).send(error);
+  }
+});
+
 router.post('/', async (req, res) => {
   try {
     console.log('this is the req.body', req.body);
