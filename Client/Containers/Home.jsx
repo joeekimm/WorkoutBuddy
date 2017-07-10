@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import TweenLite from 'gsap';
 import scrollTo from '../../node_modules/gsap/ScrollToPlugin';
 import { login } from '../Actions/LogActions';
+import { FetchCitiesAction } from '../Actions/FetchCitiesAction';
+import Cities from '../Components/PopularCityEntry';
 import GoogleMap from '../Components/GoogleMaps';
 
 
@@ -11,7 +13,6 @@ class Home extends Component {
     super(props);
     this.state = {
       pageScrolling: false,
-      cities: [],
     };
 
     this.handlePageScroll = this.handlePageScroll.bind(this);
@@ -19,7 +20,9 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    const { FetchCitiesAction } = this.props;
     window.addEventListener('scroll', this.handleNavScroll);
+    FetchCitiesAction();
   }
 
   componentWillUnmount() {
@@ -35,7 +38,8 @@ class Home extends Component {
   }
 
   render() {
-    const { login, history } = this.props;
+    const { login, history, cities } = this.props;
+    console.log(this.props);
     return (
       <div className="home-wrapper">
         <nav className="nav-bar">
@@ -56,7 +60,7 @@ class Home extends Component {
         <div id="discover" className="how-it-works">
           <h1>Find workout partners near you</h1>
           <select>
-            <option>hi</option>
+            {'data' in cities ? cities.data[0].map(city => <Cities key={city.id} city={city} />) : []}
           </select>
           <GoogleMap />
         </div>
@@ -65,4 +69,8 @@ class Home extends Component {
   }
 }
 
-export default connect(null, { login })(Home);
+const MapStateToProps = state => ({
+  cities: state.cities,
+});
+
+export default connect(MapStateToProps, { login, FetchCitiesAction })(Home);

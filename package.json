@@ -52,6 +52,7 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
     "redux-persist": "^4.8.1",
+    "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
     "require": "^2.4.20",
     "sequelize": "^4.1.0",
