@@ -9,6 +9,9 @@ body {
   @include font($main-font);
 }
 
+button:focus {outline:0;}
+li:focus {outline:0;}
+select:focus {outline:0;}
 /***********************/
 
 
@@ -106,8 +109,8 @@ body {
           text-align: center;
         }
         .area {
-          @include button($main-font, $attentive, white, 6px, 6vh, 90%);
-          font-size: 70%;
+          @include button($main-font, $attentive, white, 6px, 6vh, 60%);
+          font-size: 60%;
           border-style: none;
           padding: 1.5%;
           line-height: 1.5%;
@@ -145,15 +148,19 @@ body {
         }
           .map-icons {
             @include flex(row, space-between, center);
-            div {
-              @include circle(white);
-              position: relative;
-              img {
-                position: absolute;
-                height: 80%;
-                width: 80%;
-                left: 10%;
-                top: 10%;
+            .inspo {
+              @include flex(column, space-between, center);
+              color: $attentive;
+              .circle {
+                @include circle(white);
+                position: relative;
+                img {
+                  position: absolute;
+                  height: 80%;
+                  width: 80%;
+                  left: 10%;
+                  top: 10%;
+                }
               }
             }
           }
@@ -186,8 +193,8 @@ body {
         }
         .gmap-container {
           border-radius:8px;
-          height: 60%;
-          width: 80%;
+          height: 55%;
+          width: 75%;
         }
       }
     }

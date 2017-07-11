@@ -10,6 +10,15 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 100%; }
 
+button:focus {
+  outline: 0; }
+
+li:focus {
+  outline: 0; }
+
+select:focus {
+  outline: 0; }
+
 /***********************/
 /******Component Ternary Classes*********/
 .nav-scroll {
@@ -108,8 +117,8 @@ body {
         color: white;
         border-radius: 6px;
         height: 6vh;
-        width: 90%;
-        font-size: 70%;
+        width: 60%;
+        font-size: 60%;
         border-style: none;
         padding: 1.5%;
         line-height: 1.5%; }
@@ -150,20 +159,26 @@ body {
         flex-direction: row;
         justify-content: space-between;
         align-items: center; }
-        .home-wrapper .how-it-works .map-icons div {
-          background: white;
-          height: 60px;
-          width: 60px;
-          border-radius: 30px;
-          margin: 20px;
-          box-shadow: 2px 2px 2px 0 lightgray;
-          position: relative; }
-          .home-wrapper .how-it-works .map-icons div img {
-            position: absolute;
-            height: 80%;
-            width: 80%;
-            left: 10%;
-            top: 10%; }
+        .home-wrapper .how-it-works .map-icons .inspo {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          color: #849fff; }
+          .home-wrapper .how-it-works .map-icons .inspo .circle {
+            background: white;
+            height: 60px;
+            width: 60px;
+            border-radius: 30px;
+            margin: 20px;
+            box-shadow: 2px 2px 2px 0 lightgray;
+            position: relative; }
+            .home-wrapper .how-it-works .map-icons .inspo .circle img {
+              position: absolute;
+              height: 80%;
+              width: 80%;
+              left: 10%;
+              top: 10%; }
       .home-wrapper .how-it-works .gmap-container {
         border-radius: 8px;
         height: 50%;
@@ -192,8 +207,8 @@ body {
       font-size: 100%; }
     .home-wrapper .how-it-works .gmap-container {
       border-radius: 8px;
-      height: 60%;
-      width: 80%; } }
+      height: 55%;
+      width: 75%; } }
 
 /*************************/
 /*******ANIMATIONS********/
