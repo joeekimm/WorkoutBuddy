@@ -12,24 +12,43 @@ export default class Workoutinfo extends Component {
     super(props);
     
     this.state = {
-      ibmtext: ''
+      question1: '',
+      question2: '',
+      question3: '',
+      count100: 0
     }
 
-    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleText1Change = this.handleText1Change.bind(this);
+    this.handleText2Change = this.handleText2Change.bind(this);
+    this.handleText3Change = this.handleText3Change.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   
-  handleTextChange(event) {
+  handleText1Change(event) {
     this.setState({
-      ibmtext: event.target.value
-    }, console.log(this.state.ibmtext))
+      question1: event.target.value
+    }, () => console.log(this.state.question1))
+  }
+
+  handleText2Change(event) {
+    this.setState({
+      question2: event.target.value
+    }, () => console.log(this.state.question2))
+  }
+
+  handleText3Change(event) {
+    this.setState({
+      question3: event.target.value
+    }, () => console.log(this.state.question3))
   }
 
   handleSubmit(event) {
     event.preventDefault();
+    let total100 = this.state.question1 + ' ' + this.state.question2 + ' ' + this.state.question3;
+    console.log(total100);
     const user_id = JSON.parse(localStorage.profile).user_id;
     axios.put('http://localhost:5000/api/users/updatePersonality', {
-      text: this.state.ibmtext,
+      text: total100,
       id: user_id
     })
       .then((res) => console.log(res.data))
@@ -37,12 +56,19 @@ export default class Workoutinfo extends Component {
 
   render() {
     // console.log(JSON.parse(localStorage.profile).user_id);
+    let q1length = this.state.question1.split(' ').length,
+        q2length = this.state.question2.split(' ').length,
+        q3length = this.state.question3.split(' ').length;
     return(
-      <Form onSubmit={(event) => this.handleSubmit(event)}>
-        <Form.TextArea onChange={(event) => this.handleTextChange(event)} label='Question 1' placeholder='What do you see yourself doing in your dream job?' />
-        {/*<Textarea label="Textarea" floatingLabel={true} defaultValue="Value on load" />*/}
-        <Button type='submit'>Submit</Button>
-      </Form>
+      <div>
+        <Form onSubmit={(event) => this.handleSubmit(event)}>
+          <Form.TextArea onChange={(event) => this.handleText1Change(event)} placeholder='I see myself...' label='What do you see yourself doing in your dream job?' />
+          <Form.TextArea onChange={(event) => this.handleText2Change(event)} placeholder='My ideal place would be...' label='Describe the type of place you would choose to live in.' />
+          <Form.TextArea onChange={(event) => this.handleText3Change(event)} placeholder='In my free time I like to...' label='What do you do on your free time / what are your hobbies?' />
+          <Button type='submit'>Submit</Button>
+        </Form>
+        {q1length + q2length + q3length < 100 ? <text>You have {100 - q1length - q2length - q3length} words left!</text> : <text>You hit 100 words!</text>}
+      </div>
     );
   }
 }

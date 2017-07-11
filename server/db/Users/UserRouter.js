@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
     result = await User.addUser(req.body);
     res.status(200).send(result);
   } catch (error) {
-    console.log('Error in the addUser route');
+    console.log('Error in the addUser route  ,', error);
     res.status(500).send(error);
   }
 });
