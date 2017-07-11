@@ -182,7 +182,8 @@ select:focus {
       .home-wrapper .how-it-works .gmap-container {
         border-radius: 8px;
         height: 50%;
-        width: 80%; } }
+        width: 80%;
+        margin-bottom: .5%; } }
   @media (min-width: 768px) {
     .home-wrapper .home p {
       font-size: 300%; }
@@ -208,7 +209,8 @@ select:focus {
     .home-wrapper .how-it-works .gmap-container {
       border-radius: 8px;
       height: 55%;
-      width: 75%; } }
+      width: 75%;
+      margin-bottom: 1.5%; } }
 
 /*************************/
 /*******ANIMATIONS********/
