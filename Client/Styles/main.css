@@ -79,17 +79,6 @@ body {
       position: absolute;
       background-color: rgba(0, 0, 0, 0.6);
       z-index: 1; }
-    .home-wrapper .home .area {
-      font-family: "Poppins", sans-serif;
-      font-size: 100%;
-      background-color: #849fff;
-      color: white;
-      border-radius: 6px;
-      height: 6vh;
-      width: auto;
-      border-style: none;
-      padding: 1.5%;
-      line-height: 1.5%; }
     .home-wrapper .home button {
       z-index: 2;
       position: relative; }
@@ -112,6 +101,18 @@ body {
       .home-wrapper .home p {
         font-size: 200%;
         text-align: center; }
+      .home-wrapper .home .area {
+        font-family: "Poppins", sans-serif;
+        font-size: 100%;
+        background-color: #849fff;
+        color: white;
+        border-radius: 6px;
+        height: 6vh;
+        width: 90%;
+        font-size: 70%;
+        border-style: none;
+        padding: 1.5%;
+        line-height: 1.5%; }
       .home-wrapper .home .down {
         background-color: transparent;
         border-style: none;
@@ -127,6 +128,9 @@ body {
       justify-content: space-around;
       align-items: center;
       text-align: center; }
+      .home-wrapper .how-it-works h1 {
+        margin: 1%;
+        font-size: 150%; }
       .home-wrapper .how-it-works .app-usage {
         display: flex;
         flex-direction: column;
@@ -141,19 +145,55 @@ body {
           text-indent: 15px;
           border-style: none;
           color: #849fff; }
+      .home-wrapper .how-it-works .map-icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; }
+        .home-wrapper .how-it-works .map-icons div {
+          background: white;
+          height: 60px;
+          width: 60px;
+          border-radius: 30px;
+          margin: 20px;
+          box-shadow: 2px 2px 2px 0 lightgray;
+          position: relative; }
+          .home-wrapper .how-it-works .map-icons div img {
+            position: absolute;
+            height: 80%;
+            width: 80%;
+            left: 10%;
+            top: 10%; }
       .home-wrapper .how-it-works .gmap-container {
         border-radius: 8px;
-        height: 60%;
+        height: 50%;
         width: 80%; } }
   @media (min-width: 768px) {
     .home-wrapper .home p {
       font-size: 300%; }
+    .home-wrapper .home .area {
+      font-family: "Poppins", sans-serif;
+      font-size: 100%;
+      background-color: #849fff;
+      color: white;
+      border-radius: 6px;
+      height: 6vh;
+      width: auto;
+      border-style: none;
+      padding: 1.5%;
+      line-height: 1.5%; }
+    .home-wrapper .how-it-works h1 {
+      font-size: 250%; }
     .home-wrapper .how-it-works .app-usage {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      font-size: 100%; } }
+      font-size: 100%; }
+    .home-wrapper .how-it-works .gmap-container {
+      border-radius: 8px;
+      height: 60%;
+      width: 80%; } }
 
 /*************************/
 /*******ANIMATIONS********/

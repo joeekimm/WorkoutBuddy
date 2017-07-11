@@ -84,6 +84,17 @@ class Home extends Component {
               {'data' in cities ? cities.data[0].map(city => <Cities key={city.id} city={city} />) : []}
             </select>
           </div>
+          <div className="map-icons">
+            <div>
+              <img alt="tone" src="../Assets/Icons/fitness.png" />
+            </div>
+            <div>
+              <img alt="weight-lift" src="../Assets/Icons/weightlifter.png" />
+            </div>
+            <div>
+              <img alt="heart" src="../Assets/Icons/cardiogram.png" />
+            </div>
+          </div>
           <GoogleMap center={this.state.currentLat} nearbyUsers={this.state.nearbyUsers} />
         </div>
       </div>
