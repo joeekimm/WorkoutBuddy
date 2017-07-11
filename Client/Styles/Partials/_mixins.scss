@@ -40,7 +40,14 @@
   width: $w;
 }
 
-
+@mixin circle($color: white) {
+  background: $color;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  margin: 20px;
+  box-shadow: 2px 2px 2px 0 lightgray;
+}
 
 
 @mixin breakpoint($screen) {

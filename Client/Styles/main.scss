@@ -83,12 +83,6 @@ body {
       div {
         @include dark-overlay;
       }
-      .area {
-        @include button($main-font,$attentive, white, 6px, 6vh, auto);
-        border-style: none;
-        padding: 1.5%;
-        line-height: 1.5%;
-      }
       button {
         z-index: 2;
         position: relative;
@@ -111,6 +105,13 @@ body {
           font-size: 200%;
           text-align: center;
         }
+        .area {
+          @include button($main-font, $attentive, white, 6px, 6vh, 90%);
+          font-size: 70%;
+          border-style: none;
+          padding: 1.5%;
+          line-height: 1.5%;
+        }
         .down {
           background-color: transparent;
           border-style: none;
@@ -126,6 +127,10 @@ body {
       .how-it-works {
         @include flex(column, space-around, center);
         text-align: center;
+        h1{
+          margin: 1%;
+          font-size: 150%;
+        }
         .app-usage {
           @include flex(column, center, center);
           font-weight: lighter;
@@ -138,9 +143,23 @@ body {
             color: $attentive;
           }
         }
+          .map-icons {
+            @include flex(row, space-between, center);
+            div {
+              @include circle(white);
+              position: relative;
+              img {
+                position: absolute;
+                height: 80%;
+                width: 80%;
+                left: 10%;
+                top: 10%;
+              }
+            }
+          }
         .gmap-container {
           border-radius:8px;
-          height: 60%;
+          height: 50%;
           width: 80%;
         }
       }
@@ -150,11 +169,25 @@ body {
         p {
           font-size: 300%;
         }
+        .area {
+          @include button($main-font,$attentive, white, 6px, 6vh, auto);
+          border-style: none;
+          padding: 1.5%;
+          line-height: 1.5%;
+        }
       }
       .how-it-works {
+        h1 {
+          font-size: 250%;
+        }
         .app-usage {
           @include flex(row, center, center);
           font-size: 100%;
+        }
+        .gmap-container {
+          border-radius:8px;
+          height: 60%;
+          width: 80%;
         }
       }
     }
