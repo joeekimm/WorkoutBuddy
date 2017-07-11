@@ -118,7 +118,7 @@ select:focus {
         border-radius: 6px;
         height: 6vh;
         width: 60%;
-        font-size: 80%;
+        font-size: 60%;
         border-style: none;
         padding: 1.5%;
         line-height: 1.5%; }
@@ -162,10 +162,10 @@ select:focus {
         .home-wrapper .how-it-works .map-icons .inspo {
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: space-between;
           align-items: center;
           color: #849fff; }
-          .home-wrapper .how-it-works .map-icons .inspo div {
+          .home-wrapper .how-it-works .map-icons .inspo .circle {
             background: white;
             height: 60px;
             width: 60px;
@@ -173,7 +173,7 @@ select:focus {
             margin: 20px;
             box-shadow: 2px 2px 2px 0 lightgray;
             position: relative; }
-            .home-wrapper .how-it-works .map-icons .inspo div img {
+            .home-wrapper .how-it-works .map-icons .inspo .circle img {
               position: absolute;
               height: 80%;
               width: 80%;
@@ -205,10 +205,18 @@ select:focus {
       justify-content: center;
       align-items: center;
       font-size: 100%; }
+    .home-wrapper .how-it-works .circle {
+      background: black;
+      height: 60px;
+      width: 60px;
+      border-radius: 30px;
+      margin: 20px;
+      box-shadow: 2px 2px 2px 0 lightgray;
+      position: relative; }
     .home-wrapper .how-it-works .gmap-container {
       border-radius: 8px;
-      height: 60%;
-      width: 80%; } }
+      height: 55%;
+      width: 75%; } }
 
 /*************************/
 /*******ANIMATIONS********/

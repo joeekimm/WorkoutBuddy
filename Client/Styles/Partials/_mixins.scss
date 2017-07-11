@@ -40,7 +40,7 @@
   width: $w;
 }
 
-@mixin circle($color: white) {
+@mixin circle($color: white, $height: 60px, $width: 60px, $br: 30px) {
   background: $color;
   height: 60px;
   width: 60px;

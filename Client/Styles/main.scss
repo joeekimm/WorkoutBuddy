@@ -110,7 +110,7 @@ select:focus {outline:0;}
         }
         .area {
           @include button($main-font, $attentive, white, 6px, 6vh, 60%);
-          font-size: 80%;
+          font-size: 60%;
           border-style: none;
           padding: 1.5%;
           line-height: 1.5%;
@@ -149,9 +149,9 @@ select:focus {outline:0;}
           .map-icons {
             @include flex(row, space-between, center);
             .inspo {
-              @include flex(column, center, center);
+              @include flex(column, space-between, center);
               color: $attentive;
-              div {
+              .circle {
                 @include circle(white);
                 position: relative;
                 img {
@@ -191,10 +191,14 @@ select:focus {outline:0;}
           @include flex(row, center, center);
           font-size: 100%;
         }
+        .circle {
+          @include circle(black, 150px, 150px, 75px);
+          position: relative;
+        }
         .gmap-container {
           border-radius:8px;
-          height: 60%;
-          width: 80%;
+          height: 55%;
+          width: 75%;
         }
       }
     }

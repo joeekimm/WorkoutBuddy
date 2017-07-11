@@ -86,19 +86,19 @@ class Home extends Component {
           </div>
           <div className="map-icons">
             <div className="inspo">
-              <div>
+              <div className="circle">
                 <img alt="tone" src="../Assets/Icons/fitness.png" />
               </div>
               tone-up
             </div>
             <div className="inspo">
-              <div>
+              <div className="circle">
                 <img alt="weight-lift" src="../Assets/Icons/weightlifter.png" />
               </div>
               bulk-up
             </div>
             <div className="inspo">
-              <div>
+              <div className="circle">
                 <img alt="heart" src="../Assets/Icons/cardiogram.png" />
               </div>
               get healthy!
