@@ -85,18 +85,24 @@ class Home extends Component {
             </select>
           </div>
           <div className="map-icons">
-            <div>
-              <img alt="tone" src="../Assets/Icons/fitness.png" />
+            <div className="inspo">
+              <div>
+                <img alt="tone" src="../Assets/Icons/fitness.png" />
+              </div>
+              tone-up
             </div>
-            tone-up
-            <div>
-              <img alt="weight-lift" src="../Assets/Icons/weightlifter.png" />
+            <div className="inspo">
+              <div>
+                <img alt="weight-lift" src="../Assets/Icons/weightlifter.png" />
+              </div>
+              bulk-up
             </div>
-            bulk-up
-            <div>
-              <img alt="heart" src="../Assets/Icons/cardiogram.png" />
+            <div className="inspo">
+              <div>
+                <img alt="heart" src="../Assets/Icons/cardiogram.png" />
+              </div>
+              get healthy!
             </div>
-            get healthy!
           </div>
           <GoogleMap center={this.state.currentLat} nearbyUsers={this.state.nearbyUsers} />
         </div>

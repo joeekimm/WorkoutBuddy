@@ -109,8 +109,8 @@ select:focus {outline:0;}
           text-align: center;
         }
         .area {
-          @include button($main-font, $attentive, white, 6px, 6vh, 90%);
-          font-size: 70%;
+          @include button($main-font, $attentive, white, 6px, 6vh, 60%);
+          font-size: 80%;
           border-style: none;
           padding: 1.5%;
           line-height: 1.5%;
@@ -148,15 +148,19 @@ select:focus {outline:0;}
         }
           .map-icons {
             @include flex(row, space-between, center);
-            div {
-              @include circle(white);
-              position: relative;
-              img {
-                position: absolute;
-                height: 80%;
-                width: 80%;
-                left: 10%;
-                top: 10%;
+            .inspo {
+              @include flex(column, center, center);
+              color: $attentive;
+              div {
+                @include circle(white);
+                position: relative;
+                img {
+                  position: absolute;
+                  height: 80%;
+                  width: 80%;
+                  left: 10%;
+                  top: 10%;
+                }
               }
             }
           }
