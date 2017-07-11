@@ -100,22 +100,11 @@ body {
       position: absolute;
       background-color: rgba(0, 0, 0, 0.6);
       z-index: 1; }
-    .home-wrapper .home .area {
-      font-family: "Poppins", sans-serif;
-      font-size: 100%;
-      background-color: #849fff;
-      color: white;
-      border-radius: 6px;
-      height: 6vh;
-      width: auto;
-      border-style: none;
-      padding: 1.5%;
-      line-height: 1.5%; }
     .home-wrapper .home button {
       z-index: 2;
       position: relative; }
   .home-wrapper .how-it-works {
-    background-color: #f4f8fc;
+    background-color: #f4f7f9;
     height: 100vh;
     width: 100%; }
   @media (min-width: 300px) {
@@ -151,6 +140,18 @@ body {
       .home-wrapper .home p {
         font-size: 200%;
         text-align: center; }
+      .home-wrapper .home .area {
+        font-family: "Poppins", sans-serif;
+        font-size: 100%;
+        background-color: #849fff;
+        color: white;
+        border-radius: 6px;
+        height: 6vh;
+        width: 90%;
+        font-size: 70%;
+        border-style: none;
+        padding: 1.5%;
+        line-height: 1.5%; }
       .home-wrapper .home .down {
         background-color: transparent;
         border-style: none;
@@ -174,20 +175,138 @@ body {
           -ms-flex-align: center;
               align-items: center;
       text-align: center; }
+      .home-wrapper .how-it-works h1 {
+        margin: 1%;
+        font-size: 150%; }
+      .home-wrapper .how-it-works .app-usage {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        font-weight: lighter;
+        font-size: 90%; }
+        .home-wrapper .how-it-works .app-usage .city-filter {
+          font-family: "Poppins", sans-serif;
+          font-size: 100%;
+          font-size: 120%;
+          text-indent: 15px;
+          border-style: none;
+          color: #849fff; }
+      .home-wrapper .how-it-works .map-icons {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        .home-wrapper .how-it-works .map-icons div {
+          background: white;
+          height: 60px;
+          width: 60px;
+          border-radius: 30px;
+          margin: 20px;
+          -webkit-box-shadow: 2px 2px 2px 0 lightgray;
+                  box-shadow: 2px 2px 2px 0 lightgray;
+          position: relative; }
+          .home-wrapper .how-it-works .map-icons div img {
+            position: absolute;
+            height: 80%;
+            width: 80%;
+            left: 10%;
+            top: 10%; }
       .home-wrapper .how-it-works .gmap-container {
         border-radius: 8px;
-        height: 60%;
+        height: 50%;
         width: 80%; } }
   @media (min-width: 768px) {
     .home-wrapper .home p {
-      font-size: 300%; } }
+      font-size: 300%; }
+    .home-wrapper .home .area {
+      font-family: "Poppins", sans-serif;
+      font-size: 100%;
+      background-color: #849fff;
+      color: white;
+      border-radius: 6px;
+      height: 6vh;
+      width: auto;
+      border-style: none;
+      padding: 1.5%;
+      line-height: 1.5%; }
+    .home-wrapper .how-it-works h1 {
+      font-size: 250%; }
+    .home-wrapper .how-it-works .app-usage {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      font-size: 100%; }
+    .home-wrapper .how-it-works .gmap-container {
+      border-radius: 8px;
+      height: 60%;
+      width: 80%; } }
+
+/*************************/
+/*******ANIMATIONS********/
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.fade-in {
+  -webkit-animation: fade-in .4s 1;
+          animation: fade-in .4s 1; }
+
+.fade-out {
+  -webkit-animation: fade-out .3s 1;
+          animation: fade-out .3s 1; }
 
 /*************************/
 /*******GOOGLE-MAPS********/
 .map-marker {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  border-radius: 50%; }
+  width: 30px;
+  height: 30px; }
 
 /*************************/
