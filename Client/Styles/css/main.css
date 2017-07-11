@@ -120,7 +120,7 @@ a {
       z-index: 2;
       position: relative; }
   .home-wrapper .how-it-works {
-    background-color: #f4f8fc;
+    background-color: #f4f7f9;
     height: 100vh;
     width: 100%; }
   @media (min-width: 300px) {
@@ -631,10 +631,8 @@ a {
 /*************************/
 /*******GOOGLE-MAPS********/
 .map-marker {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  border-radius: 50%; }
+  width: 30px;
+  height: 30px; }
 
 /*************************/
 /*******REUSABLE COMPONENTS********/
