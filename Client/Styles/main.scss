@@ -9,6 +9,9 @@ body {
   @include font($main-font);
 }
 
+button:focus {outline:0;}
+li:focus {outline:0;}
+select:focus {outline:0;}
 /***********************/
 
 

@@ -88,12 +88,15 @@ class Home extends Component {
             <div>
               <img alt="tone" src="../Assets/Icons/fitness.png" />
             </div>
+            tone-up
             <div>
               <img alt="weight-lift" src="../Assets/Icons/weightlifter.png" />
             </div>
+            bulk-up
             <div>
               <img alt="heart" src="../Assets/Icons/cardiogram.png" />
             </div>
+            get healthy!
           </div>
           <GoogleMap center={this.state.currentLat} nearbyUsers={this.state.nearbyUsers} />
         </div>
