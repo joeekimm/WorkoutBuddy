@@ -191,10 +191,6 @@ select:focus {outline:0;}
           @include flex(row, center, center);
           font-size: 100%;
         }
-        .circle {
-          @include circle(black, 150px, 150px, 75px);
-          position: relative;
-        }
         .gmap-container {
           border-radius:8px;
           height: 55%;

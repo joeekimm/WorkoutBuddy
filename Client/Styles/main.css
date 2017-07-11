@@ -205,14 +205,6 @@ select:focus {
       justify-content: center;
       align-items: center;
       font-size: 100%; }
-    .home-wrapper .how-it-works .circle {
-      background: black;
-      height: 60px;
-      width: 60px;
-      border-radius: 30px;
-      margin: 20px;
-      box-shadow: 2px 2px 2px 0 lightgray;
-      position: relative; }
     .home-wrapper .how-it-works .gmap-container {
       border-radius: 8px;
       height: 55%;
