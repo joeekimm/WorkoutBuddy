@@ -205,6 +205,63 @@ select:focus {outline:0;}
   /*************************/
 
 
+/*******DASHBOARD********/
+
+.dashboard {
+  @include breakpoint(small) {
+
+  }
+  @include breakpoint(medium) {
+    @include flex(row, center, center);
+    background-color: lightgray;
+    height: 100vh;
+    width: 100vw;
+    .side-bar {
+      @include flex(column, flex-start, center);
+      flex: 1;
+      position: relative;
+      text-align: center;
+      background-color: #eaeefc;
+      height: 100vh;
+      box-shadow: 5px 0 16px -6px #777;
+      border-right-width: 1px;
+      z-index: 1;
+      .side-header {
+        background-color: #cfdbf9;
+        width: 100%;
+        height: 10vh;
+      }
+      .matches {
+        @include button($main-font, #5d84ef, white, 6px, 7vh, 80%);
+        @include epic-shadow;
+        position: absolute;
+        top: 7vh;
+      }
+      .accomplishments {
+        @include flex(column, center, center);
+        @include separators;
+        margin-top: 10vh;
+      }
+      .workouts {
+        @include flex(column, center, center);
+        @include separators;
+      }
+      .profile {
+        @include flex(column, center, center);
+        @include separators;
+      }
+    }
+    .dash-content {
+      flex: 5;
+      text-align: center;
+      background-color: #f4f7ff;
+      height: 100vh;
+    }
+  }
+}
+
+/*************************/
+
 
   /*******ANIMATIONS********/
   @keyframes fade-in {

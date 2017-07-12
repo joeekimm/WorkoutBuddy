@@ -38,6 +38,7 @@
   border-radius: $br;
   height: $h;
   width: $w;
+  border-style: none;
 }
 
 @mixin circle($color: white, $height: 60px, $width: 60px, $br: 30px) {
@@ -49,6 +50,13 @@
   box-shadow: 2px 2px 2px 0 lightgray;
 }
 
+@mixin epic-shadow {
+  box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+@mixin separators {
+  border-bottom: 1px solid blue;
+}
 
 @mixin breakpoint($screen) {
   @if $screen == small {
