@@ -42,7 +42,7 @@ class Dashboard extends Component {
               messages
             </button>
           </div>
-          <button className="logout">LOGOUT</button>
+          <button onClick={() => logout(history)} className="logout">LOGOUT</button>
         </div>
         <div className="dash-content">
           rest of content
