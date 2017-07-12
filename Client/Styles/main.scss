@@ -227,7 +227,7 @@ select:focus {outline:0;}
       border-right-width: 1px;
       z-index: 1;
       .side-header {
-        background-color: #cfdbf9;
+        background-color: $secondary;
         width: 100%;
         height: 10vh;
       }
@@ -238,18 +238,57 @@ select:focus {outline:0;}
         top: 7vh;
       }
       .accomplishments {
-        @include flex(column, center, center);
+        @include flex(column, space-around, center);
         @include separators;
         margin-top: 10vh;
+        height: 20vh;
         width: 100%;
+        button {
+          &:hover {
+            background-color: #5d84ef;
+          }
+          i {
+            margin-right: 5%;
+          }
+          @include side-button;
+        }
       }
       .workouts {
-        @include flex(column, center, center);
+        @include flex(column, space-around, center);
         @include separators;
+        font-weight: bold;
+        width: 100%;
+        height: 20vh;
+        button {
+          &:hover {
+            background-color: #5d84ef;
+          }
+          i {
+            margin-right: 5%;
+          }
+          @include side-button;
+        }
       }
       .profile {
-        @include flex(column, center, center);
+        @include flex(column, space-around, center);
         @include separators;
+        font-weight: bold;
+        width: 100%;
+        height: 20vh;
+        button {
+          &:hover {
+            background-color: #5d84ef;
+          }
+          i {
+            margin-right: 5%;
+          }
+          @include side-button
+        }
+      }
+      .logout {
+        @include button($main-font, #5d84ef, white, 6px, 7vh, 80%);
+        @include epic-shadow;
+        margin-top: 5%;
       }
     }
     .dash-content {

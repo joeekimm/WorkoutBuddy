@@ -10,11 +10,53 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 100%; }
 
+button:focus {
+  outline: 0; }
+
+li:focus {
+  outline: 0; }
+
+select:focus {
+  outline: 0; }
+
 /***********************/
 /******Component Ternary Classes*********/
-#nav-scroll {
+.nav-scroll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-color .2s ease-in;
+  transition: background-color .2s ease-in;
   background-color: white;
-  color: mediumspringgreen; }
+  color: #849fff;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 10vh;
+  z-index: 4; }
+  .nav-scroll h2 {
+    margin-left: 5%; }
+  .nav-scroll button {
+    margin-right: 5%;
+    background-color: transparent;
+    border-style: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 100%;
+    color: #849fff; }
+
+.low-shadow {
+  -webkit-box-shadow: 0 2px 1px -1px lightgray;
+          box-shadow: 0 2px 1px -1px lightgray; }
 
 /****************************************/
 /******HOME PAGE*****/
@@ -33,14 +75,18 @@ body {
       -ms-flex-align: center;
           align-items: center; }
   .home-wrapper .nav-bar {
+    -webkit-transition: background-color .2s ease-in;
+    transition: background-color .2s ease-in;
     position: fixed;
     top: 0;
-    width: 90vw;
-    left: 5vw;
+    width: 100vw;
     height: 10vh;
     background-color: transparent;
     color: white; }
+    .home-wrapper .nav-bar h2 {
+      margin-left: 5%; }
     .home-wrapper .nav-bar button {
+      margin-right: 5%;
       background-color: transparent;
       border-style: none;
       font-family: "Poppins", sans-serif;
@@ -63,40 +109,14 @@ body {
       position: absolute;
       background-color: rgba(0, 0, 0, 0.6);
       z-index: 1; }
-    .home-wrapper .home .area {
-      font-family: "Poppins", sans-serif;
-      font-size: 100%;
-      background-color: #849fff;
-      color: white;
-      border-radius: 6px;
-      height: 6vh;
-      width: auto;
-      border-style: none;
-      padding: 1.5%;
-      line-height: 1.5%; }
     .home-wrapper .home button {
       z-index: 2;
       position: relative; }
+  .home-wrapper .how-it-works {
+    background-color: #f4f7f9;
+    height: 100vh;
+    width: 100%; }
   @media (min-width: 300px) {
-    .home-wrapper .nav-bar {
-      display: none; }
-    .home-wrapper .home {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; }
-      .home-wrapper .home p {
-        font-size: 150%; } }
-  @media (min-width: 768px) {
     .home-wrapper .nav-bar {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -112,23 +132,378 @@ body {
           -ms-flex-align: center;
               align-items: center;
       z-index: 2; }
+    .home-wrapper .home {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .home-wrapper .home p {
+        font-size: 200%;
+        text-align: center; }
+      .home-wrapper .home .area {
+        font-family: "Poppins", sans-serif;
+        font-size: 100%;
+        background-color: #849fff;
+        color: white;
+        border-radius: 6px;
+        height: 6vh;
+        width: 60%;
+        border-style: none;
+        font-size: 60%;
+        border-style: none;
+        padding: 1.5%;
+        line-height: 1.5%; }
+      .home-wrapper .home .down {
+        background-color: transparent;
+        border-style: none;
+        position: absolute;
+        bottom: 2vh;
+        z-index: 2; }
+        .home-wrapper .home .down .move-downwards {
+          font-size: 50px;
+          color: white; }
+    .home-wrapper .how-it-works {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      text-align: center; }
+      .home-wrapper .how-it-works h1 {
+        margin: 1%;
+        font-size: 150%; }
+      .home-wrapper .how-it-works .app-usage {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        font-weight: lighter;
+        font-size: 90%; }
+        .home-wrapper .how-it-works .app-usage .city-filter {
+          font-family: "Poppins", sans-serif;
+          font-size: 100%;
+          font-size: 120%;
+          text-indent: 15px;
+          border-style: none;
+          color: #849fff; }
+      .home-wrapper .how-it-works .map-icons {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        .home-wrapper .how-it-works .map-icons .inspo {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          color: #849fff; }
+          .home-wrapper .how-it-works .map-icons .inspo .circle {
+            background: white;
+            height: 60px;
+            width: 60px;
+            border-radius: 30px;
+            margin: 20px;
+            -webkit-box-shadow: 2px 2px 2px 0 lightgray;
+                    box-shadow: 2px 2px 2px 0 lightgray;
+            position: relative; }
+            .home-wrapper .how-it-works .map-icons .inspo .circle img {
+              position: absolute;
+              height: 80%;
+              width: 80%;
+              left: 10%;
+              top: 10%; }
+      .home-wrapper .how-it-works .gmap-container {
+        border-radius: 8px;
+        height: 50%;
+        width: 80%;
+        margin-bottom: .5%; } }
+  @media (min-width: 768px) {
     .home-wrapper .home p {
-      font-size: 200%; }
-    .home-wrapper .home .down {
-      background-color: transparent;
+      font-size: 300%; }
+    .home-wrapper .home .area {
+      font-family: "Poppins", sans-serif;
+      font-size: 100%;
+      background-color: #849fff;
+      color: white;
+      border-radius: 6px;
+      height: 6vh;
+      width: auto;
       border-style: none;
-      position: absolute;
-      bottom: 2vh;
-      z-index: 2; }
-      .home-wrapper .home .down .move-downwards {
-        font-size: 50px;
-        color: white; } }
-  @media (min-width: 1080px) {
-    .home-wrapper .home p {
-      font-size: 250%; } }
-  .home-wrapper .how-it-works {
-    background-color: white;
+      border-style: none;
+      padding: 1.5%;
+      line-height: 1.5%; }
+    .home-wrapper .how-it-works h1 {
+      font-size: 250%; }
+    .home-wrapper .how-it-works .app-usage {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      font-size: 100%; }
+    .home-wrapper .how-it-works .gmap-container {
+      border-radius: 8px;
+      height: 55%;
+      width: 75%;
+      margin-bottom: 1.5%; } }
+
+/*************************/
+/*******DASHBOARD********/
+@media (min-width: 768px) {
+  .dashboard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: lightgray;
     height: 100vh;
     width: 100vw; }
+    .dashboard .side-bar {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      position: relative;
+      text-align: center;
+      background-color: #eaeefc;
+      height: 100vh;
+      -webkit-box-shadow: 5px 0 16px -6px #777;
+              box-shadow: 5px 0 16px -6px #777;
+      border-right-width: 1px;
+      z-index: 1; }
+      .dashboard .side-bar .side-header {
+        background-color: #cfdbf9;
+        width: 100%;
+        height: 10vh; }
+      .dashboard .side-bar .matches {
+        font-family: "Poppins", sans-serif;
+        font-size: 100%;
+        background-color: #5d84ef;
+        color: white;
+        border-radius: 6px;
+        height: 7vh;
+        width: 80%;
+        border-style: none;
+        -webkit-box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+                box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+        position: absolute;
+        top: 7vh; }
+      .dashboard .side-bar .accomplishments {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        border-bottom: 3px solid #cfdbf9;
+        margin-top: 10vh;
+        height: 20vh;
+        width: 100%; }
+        .dashboard .side-bar .accomplishments button {
+          width: 100%;
+          font-family: "Poppins", sans-serif;
+          font-size: 100%;
+          font-weight: bold;
+          font-size: 90%;
+          background-color: transparent;
+          border-style: none; }
+          .dashboard .side-bar .accomplishments button:hover {
+            background-color: #5d84ef; }
+          .dashboard .side-bar .accomplishments button i {
+            margin-right: 5%; }
+      .dashboard .side-bar .workouts {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        border-bottom: 3px solid #cfdbf9;
+        font-weight: bold;
+        width: 100%;
+        height: 20vh; }
+        .dashboard .side-bar .workouts button {
+          width: 100%;
+          font-family: "Poppins", sans-serif;
+          font-size: 100%;
+          font-weight: bold;
+          font-size: 90%;
+          background-color: transparent;
+          border-style: none; }
+          .dashboard .side-bar .workouts button:hover {
+            background-color: #5d84ef; }
+          .dashboard .side-bar .workouts button i {
+            margin-right: 5%; }
+      .dashboard .side-bar .profile {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        border-bottom: 3px solid #cfdbf9;
+        font-weight: bold;
+        width: 100%;
+        height: 20vh; }
+        .dashboard .side-bar .profile button {
+          width: 100%;
+          font-family: "Poppins", sans-serif;
+          font-size: 100%;
+          font-weight: bold;
+          font-size: 90%;
+          background-color: transparent;
+          border-style: none; }
+          .dashboard .side-bar .profile button:hover {
+            background-color: #5d84ef; }
+          .dashboard .side-bar .profile button i {
+            margin-right: 5%; }
+      .dashboard .side-bar .logout {
+        font-family: "Poppins", sans-serif;
+        font-size: 100%;
+        background-color: #5d84ef;
+        color: white;
+        border-radius: 6px;
+        height: 7vh;
+        width: 80%;
+        border-style: none;
+        -webkit-box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+                box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+        margin-top: 5%; }
+    .dashboard .dash-content {
+      -webkit-box-flex: 5;
+          -ms-flex: 5;
+              flex: 5;
+      text-align: center;
+      background-color: #f4f7ff;
+      height: 100vh; } }
+
+/*************************/
+/*******ANIMATIONS********/
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.fade-in {
+  -webkit-animation: fade-in .4s 1;
+          animation: fade-in .4s 1; }
+
+.fade-out {
+  -webkit-animation: fade-out .3s 1;
+          animation: fade-out .3s 1; }
+
+/*************************/
+/*******GOOGLE-MAPS********/
+.map-marker {
+  width: 30px;
+  height: 30px; }
 
 /*************************/

@@ -257,23 +257,77 @@ select:focus {
       .dashboard .side-bar .accomplishments {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        border-bottom: 1px solid blue;
+        border-bottom: 3px solid #cfdbf9;
         margin-top: 10vh;
+        height: 20vh;
         width: 100%; }
+        .dashboard .side-bar .accomplishments button {
+          width: 100%;
+          font-family: "Poppins", sans-serif;
+          font-size: 100%;
+          font-weight: bold;
+          font-size: 90%;
+          background-color: transparent;
+          border-style: none; }
+          .dashboard .side-bar .accomplishments button:hover {
+            background-color: #5d84ef; }
+          .dashboard .side-bar .accomplishments button i {
+            margin-right: 5%; }
       .dashboard .side-bar .workouts {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        border-bottom: 1px solid blue; }
+        border-bottom: 3px solid #cfdbf9;
+        font-weight: bold;
+        width: 100%;
+        height: 20vh; }
+        .dashboard .side-bar .workouts button {
+          width: 100%;
+          font-family: "Poppins", sans-serif;
+          font-size: 100%;
+          font-weight: bold;
+          font-size: 90%;
+          background-color: transparent;
+          border-style: none; }
+          .dashboard .side-bar .workouts button:hover {
+            background-color: #5d84ef; }
+          .dashboard .side-bar .workouts button i {
+            margin-right: 5%; }
       .dashboard .side-bar .profile {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        border-bottom: 1px solid blue; }
+        border-bottom: 3px solid #cfdbf9;
+        font-weight: bold;
+        width: 100%;
+        height: 20vh; }
+        .dashboard .side-bar .profile button {
+          width: 100%;
+          font-family: "Poppins", sans-serif;
+          font-size: 100%;
+          font-weight: bold;
+          font-size: 90%;
+          background-color: transparent;
+          border-style: none; }
+          .dashboard .side-bar .profile button:hover {
+            background-color: #5d84ef; }
+          .dashboard .side-bar .profile button i {
+            margin-right: 5%; }
+      .dashboard .side-bar .logout {
+        font-family: "Poppins", sans-serif;
+        font-size: 100%;
+        background-color: #5d84ef;
+        color: white;
+        border-radius: 6px;
+        height: 7vh;
+        width: 80%;
+        border-style: none;
+        box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+        margin-top: 5%; }
     .dashboard .dash-content {
       flex: 5;
       text-align: center;

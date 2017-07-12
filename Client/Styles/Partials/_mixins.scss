@@ -54,8 +54,17 @@
   box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
 }
 
-@mixin separators {
-  border-bottom: 1px solid blue;
+@mixin separators($color:$secondary) {
+  border-bottom: 3px solid $color;
+}
+
+@mixin side-button {
+  width: 100%;
+  @include font($main-font);
+  font-weight: bold;
+  font-size: 90%;
+  background-color: transparent;
+  border-style: none;
 }
 
 @mixin breakpoint($screen) {
