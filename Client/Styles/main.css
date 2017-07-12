@@ -260,7 +260,8 @@ select:focus {
         justify-content: center;
         align-items: center;
         border-bottom: 1px solid blue;
-        margin-top: 10vh; }
+        margin-top: 10vh;
+        width: 100%; }
       .dashboard .side-bar .workouts {
         display: flex;
         flex-direction: column;
