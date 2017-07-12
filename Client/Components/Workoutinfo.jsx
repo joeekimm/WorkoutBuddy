@@ -51,23 +51,46 @@ export default class Workoutinfo extends Component {
       text: total100,
       id: user_id
     })
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        console.log(res.data)
+        this.props.history.push('/dashboard');
+      })
   }
 
   render() {
-    // console.log(JSON.parse(localStorage.profile).user_id);
+    // console.log(JSON.parse(localStorage.profile));
     let q1length = this.state.question1.split(' ').length,
         q2length = this.state.question2.split(' ').length,
         q3length = this.state.question3.split(' ').length;
+        console.log(q1length);
+        console.log(q2length);
+        console.log(q3length);
+
+    const styles = {
+      textbox: {
+        margin: 'auto',
+        width: '80%',
+        padding: '10px'
+      },
+      button: {
+        margin: 'auto',
+        display: 'block'
+      },
+      text: {
+        margin: 'auto',
+        width: '50%'
+      }
+    }
+
     return(
-      <div>
-        <Form onSubmit={(event) => this.handleSubmit(event)}>
+      <div className='workout-form-wrapper'>
+        <Form className='workout-input' onSubmit={(event) => this.handleSubmit(event)}>
           <Form.TextArea onChange={(event) => this.handleText1Change(event)} placeholder='I see myself...' label='What do you see yourself doing in your dream job?' />
           <Form.TextArea onChange={(event) => this.handleText2Change(event)} placeholder='My ideal place would be...' label='Describe the type of place you would choose to live in.' />
           <Form.TextArea onChange={(event) => this.handleText3Change(event)} placeholder='In my free time I like to...' label='What do you do on your free time / what are your hobbies?' />
-          <Button type='submit'>Submit</Button>
+          <Button className='workout-form-button' type='submit'>Submit</Button>
+          {q1length + q2length + q3length < 100 ? <text>You have {103 - q1length - q2length - q3length} words left!</text> : <text>You hit 100 words!</text>}
         </Form>
-        {q1length + q2length + q3length < 100 ? <text>You have {100 - q1length - q2length - q3length} words left!</text> : <text>You hit 100 words!</text>}
       </div>
     );
   }
