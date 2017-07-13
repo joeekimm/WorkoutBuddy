@@ -3,9 +3,9 @@ export default class AccomplishmentQuerySelector {
     return `INSERT INTO ACCOMPLISHMENTS (goal, date, user_id)
             VALUES ('${goal}', CURDATE(), '${user_id}');`;
   }
-  getAccomplishments(id) {
-    return `SELECT * FROM ACCOMPLISHMENTS
-            WHERE user_id = '${id}' 
-            ORDER BY ID DESC;`;
+  getAccomplishments() {
+    return `SELECT * FROM ACCOMPLISHMENTS 
+            ORDER BY ID DESC
+            LIMIT 20`;
   }
  }

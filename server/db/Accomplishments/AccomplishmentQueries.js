@@ -13,8 +13,8 @@ export default class AccomplishmentQueries extends AccomplishmentQuerySelectors 
     const accomplishments = db.query(queryString);
     return accomplishments;
   }
-  async getAccomplishments(id) {
-    const queryString = await super.getAccomplishments(id);
+  async getAccomplishments() {
+    const queryString = await super.getAccomplishments();
     const accomplishment = await db.query(queryString);
     return accomplishment;
   }

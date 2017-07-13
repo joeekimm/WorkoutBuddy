@@ -1,59 +1,30 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../Actions/LogActions';
+import NavBar from '../Components/NavBar';
+import AccomplishmentsList from '../Components/AccomplishmentsList';
 
 
 class Dashboard extends Component {
   constructor() {
     super();
+    this.state = {};
   }
-
+  componentDidMount() {
+  }
   render() {
     const { logout, history } = this.props;
     return (
       <div className="dashboard">
-        <div className="side-bar">
-          <div className="side-header" />
-          <button className="matches">See Matches</button>
-          <div className="accomplishments">
-            <button>
-              <i className="fa fa-eye" aria-hidden="true" />
-                  accomplishments
-            </button>
-            <button>
-              <i className="fa fa-dropbox" aria-hidden="true" />
-              accomplishments</button>
-          </div>
-          <div className="workouts">
-            <button>
-              <i className="fa fa-upload" aria-hidden="true" />
-              workout</button>
-            <button>
-              <i className="fa fa-eye" aria-hidden="true" />
-              workouts </button>
-          </div>
-          <div className="profile">
-            <button>
-              <i className="fa fa-user-circle" aria-hidden="true" />
-              profile
-            </button>
-            <button>
-              <i className="fa fa-comments-o" aria-hidden="true" />
-              messages
-            </button>
-          </div>
-          <button onClick={() => logout(history)} className="logout">LOGOUT</button>
-        </div>
+        <NavBar logout={logout} history={history} />
         <div className="dash-content">
-          rest of content
+          <Route path="/dashboard/accomplishments" component={() => (<AccomplishmentsList />)} />
         </div>
       </div>
     );
   }
 }
-{ /* <button onClick={() => {*/ }
-{ /* logout(history);*/ }
-{ /* }}*/ }
-{ /* >logout</button>*/ }
 
-export default connect(null, { logout })(Dashboard);
+export default withRouter(connect(null, { logout })(Dashboard));
