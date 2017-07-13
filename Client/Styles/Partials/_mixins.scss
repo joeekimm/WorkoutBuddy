@@ -67,6 +67,19 @@
   border-style: none;
 }
 
+@mixin button-hover($width: 90%, $margin: 10%) {
+  background-color: #5d84ef;
+  width: $width;
+  margin-right: $margin;
+  text-align: right;
+  color: white;
+}
+
+@mixin big-button-hover {
+  box-shadow: 0 5px 10px 0 rgba(0, 0,  0, 0.3), 0 3px 3px 0 rgba(0,0,0,0.15);
+  margin-left: 5%;
+}
+
 @mixin breakpoint($screen) {
   @if $screen == small {
     @media #{$smallbp} {  @content  };

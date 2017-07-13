@@ -359,7 +359,15 @@ select:focus {
         -webkit-box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
                 box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
         position: absolute;
-        top: 7vh; }
+        top: 7vh;
+        -webkit-transition: margin 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+        transition: margin 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+        transition: margin 0.2s ease-in, box-shadow 0.2s ease-in;
+        transition: margin 0.2s ease-in, box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in; }
+        .dashboard .side-bar .matches:hover {
+          -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+                  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+          margin-left: 5%; }
       .dashboard .side-bar .accomplishments {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -378,6 +386,8 @@ select:focus {
         height: 20vh;
         width: 100%; }
         .dashboard .side-bar .accomplishments button {
+          -webkit-transition: width 0.3s ease-in, background-color 0.3s ease-in;
+          transition: width 0.3s ease-in, background-color 0.3s ease-in;
           width: 100%;
           font-family: "Poppins", sans-serif;
           font-size: 100%;
@@ -386,7 +396,11 @@ select:focus {
           background-color: transparent;
           border-style: none; }
           .dashboard .side-bar .accomplishments button:hover {
-            background-color: #5d84ef; }
+            background-color: #5d84ef;
+            width: 90%;
+            margin-right: 10%;
+            text-align: right;
+            color: white; }
           .dashboard .side-bar .accomplishments button i {
             margin-right: 5%; }
       .dashboard .side-bar .workouts {
@@ -407,6 +421,8 @@ select:focus {
         width: 100%;
         height: 20vh; }
         .dashboard .side-bar .workouts button {
+          -webkit-transition: width 0.3s ease-in, background-color 0.3s ease-in;
+          transition: width 0.3s ease-in, background-color 0.3s ease-in;
           width: 100%;
           font-family: "Poppins", sans-serif;
           font-size: 100%;
@@ -415,7 +431,11 @@ select:focus {
           background-color: transparent;
           border-style: none; }
           .dashboard .side-bar .workouts button:hover {
-            background-color: #5d84ef; }
+            background-color: #5d84ef;
+            width: 70%;
+            margin-right: 30%;
+            text-align: right;
+            color: white; }
           .dashboard .side-bar .workouts button i {
             margin-right: 5%; }
       .dashboard .side-bar .profile {
@@ -436,6 +456,8 @@ select:focus {
         width: 100%;
         height: 20vh; }
         .dashboard .side-bar .profile button {
+          -webkit-transition: width 0.3s ease-in, background-color 0.3s ease-in;
+          transition: width 0.3s ease-in, background-color 0.3s ease-in;
           width: 100%;
           font-family: "Poppins", sans-serif;
           font-size: 100%;
@@ -444,7 +466,11 @@ select:focus {
           background-color: transparent;
           border-style: none; }
           .dashboard .side-bar .profile button:hover {
-            background-color: #5d84ef; }
+            background-color: #5d84ef;
+            width: 70%;
+            margin-right: 30%;
+            text-align: right;
+            color: white; }
           .dashboard .side-bar .profile button i {
             margin-right: 5%; }
       .dashboard .side-bar .logout {
@@ -458,7 +484,15 @@ select:focus {
         border-style: none;
         -webkit-box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
                 box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
-        margin-top: 5%; }
+        margin-top: 5%;
+        -webkit-transition: margin 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+        transition: margin 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+        transition: margin 0.2s ease-in, box-shadow 0.2s ease-in;
+        transition: margin 0.2s ease-in, box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in; }
+        .dashboard .side-bar .logout:hover {
+          -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+                  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+          margin-left: 5%; }
     .dashboard .dash-content {
       -webkit-box-flex: 5;
           -ms-flex: 5;

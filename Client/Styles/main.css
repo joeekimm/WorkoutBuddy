@@ -253,7 +253,11 @@ select:focus {
         border-style: none;
         box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
         position: absolute;
-        top: 7vh; }
+        top: 7vh;
+        transition: margin 0.2s ease-in, box-shadow 0.2s ease-in; }
+        .dashboard .side-bar .matches:hover {
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+          margin-left: 5%; }
       .dashboard .side-bar .accomplishments {
         display: flex;
         flex-direction: column;
@@ -264,6 +268,7 @@ select:focus {
         height: 20vh;
         width: 100%; }
         .dashboard .side-bar .accomplishments button {
+          transition: width 0.3s ease-in, background-color 0.3s ease-in;
           width: 100%;
           font-family: "Poppins", sans-serif;
           font-size: 100%;
@@ -272,7 +277,11 @@ select:focus {
           background-color: transparent;
           border-style: none; }
           .dashboard .side-bar .accomplishments button:hover {
-            background-color: #5d84ef; }
+            background-color: #5d84ef;
+            width: 90%;
+            margin-right: 10%;
+            text-align: right;
+            color: white; }
           .dashboard .side-bar .accomplishments button i {
             margin-right: 5%; }
       .dashboard .side-bar .workouts {
@@ -285,6 +294,7 @@ select:focus {
         width: 100%;
         height: 20vh; }
         .dashboard .side-bar .workouts button {
+          transition: width 0.3s ease-in, background-color 0.3s ease-in;
           width: 100%;
           font-family: "Poppins", sans-serif;
           font-size: 100%;
@@ -293,7 +303,11 @@ select:focus {
           background-color: transparent;
           border-style: none; }
           .dashboard .side-bar .workouts button:hover {
-            background-color: #5d84ef; }
+            background-color: #5d84ef;
+            width: 70%;
+            margin-right: 30%;
+            text-align: right;
+            color: white; }
           .dashboard .side-bar .workouts button i {
             margin-right: 5%; }
       .dashboard .side-bar .profile {
@@ -306,6 +320,7 @@ select:focus {
         width: 100%;
         height: 20vh; }
         .dashboard .side-bar .profile button {
+          transition: width 0.3s ease-in, background-color 0.3s ease-in;
           width: 100%;
           font-family: "Poppins", sans-serif;
           font-size: 100%;
@@ -314,7 +329,11 @@ select:focus {
           background-color: transparent;
           border-style: none; }
           .dashboard .side-bar .profile button:hover {
-            background-color: #5d84ef; }
+            background-color: #5d84ef;
+            width: 70%;
+            margin-right: 30%;
+            text-align: right;
+            color: white; }
           .dashboard .side-bar .profile button i {
             margin-right: 5%; }
       .dashboard .side-bar .logout {
@@ -327,7 +346,11 @@ select:focus {
         width: 80%;
         border-style: none;
         box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
-        margin-top: 5%; }
+        margin-top: 5%;
+        transition: margin 0.2s ease-in, box-shadow 0.2s ease-in; }
+        .dashboard .side-bar .logout:hover {
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+          margin-left: 5%; }
     .dashboard .dash-content {
       flex: 5;
       text-align: center;
