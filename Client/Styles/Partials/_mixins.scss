@@ -38,6 +38,7 @@
   border-radius: $br;
   height: $h;
   width: $w;
+  border-style: none;
 }
 
 @mixin circle($color: white, $height: 60px, $width: 60px, $br: 30px) {
@@ -49,6 +50,35 @@
   box-shadow: 2px 2px 2px 0 lightgray;
 }
 
+@mixin epic-shadow {
+  box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+@mixin separators($color:$secondary) {
+  border-bottom: 3px solid $color;
+}
+
+@mixin side-button {
+  width: 100%;
+  @include font($main-font);
+  font-weight: bold;
+  font-size: 90%;
+  background-color: transparent;
+  border-style: none;
+}
+
+@mixin button-hover($width: 90%, $margin: 10%) {
+  background-color: #5d84ef;
+  width: $width;
+  margin-right: $margin;
+  text-align: right;
+  color: white;
+}
+
+@mixin big-button-hover {
+  box-shadow: 0 5px 10px 0 rgba(0, 0,  0, 0.3), 0 3px 3px 0 rgba(0,0,0,0.15);
+  margin-left: 5%;
+}
 
 @mixin breakpoint($screen) {
   @if $screen == small {
