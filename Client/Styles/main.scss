@@ -237,8 +237,10 @@ select:focus {outline:0;}
         position: absolute;
         top: 7vh;
         transition: margin 0.2s ease-in, box-shadow 0.2s ease-in;
-        &:hover {
+        &:active {
           @include big-button-hover;
+          background-color: white;
+          color: $main;
         }
       }
       .accomplishments {
@@ -250,6 +252,9 @@ select:focus {outline:0;}
         button {
           transition: width 0.3s ease-in, background-color 0.3s ease-in;
           &:hover {
+            @include button-hover;
+          }
+          &:focus {
             @include button-hover;
           }
           i {
@@ -269,6 +274,9 @@ select:focus {outline:0;}
           &:hover {
             @include button-hover(70%, 30%);
           }
+          &:focus {
+            @include button-hover(70%, 30%);
+          }
           i {
             margin-right: 5%;
           }
@@ -286,6 +294,9 @@ select:focus {outline:0;}
           &:hover {
             @include button-hover(70%, 30%);
           }
+          &:focus {
+            @include button-hover(70%, 30%);
+          }
           i {
             margin-right: 5%;
           }
@@ -297,13 +308,15 @@ select:focus {outline:0;}
         @include epic-shadow;
         margin-top: 5%;
         transition: margin 0.2s ease-in, box-shadow 0.2s ease-in;
-        &:hover {
+        &:active {
           @include big-button-hover;
+          background-color: red;
+          color: white;
         }
       }
     }
     .dash-content {
-      flex: 5;
+      flex: 4;
       text-align: center;
       background-color: #f4f7ff;
       height: 100vh;

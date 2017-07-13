@@ -364,10 +364,12 @@ select:focus {
         transition: margin 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
         transition: margin 0.2s ease-in, box-shadow 0.2s ease-in;
         transition: margin 0.2s ease-in, box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in; }
-        .dashboard .side-bar .matches:hover {
+        .dashboard .side-bar .matches:active {
           -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
                   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
-          margin-left: 5%; }
+          margin-left: 5%;
+          background-color: white;
+          color: #5d84ef; }
       .dashboard .side-bar .accomplishments {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -396,6 +398,12 @@ select:focus {
           background-color: transparent;
           border-style: none; }
           .dashboard .side-bar .accomplishments button:hover {
+            background-color: #5d84ef;
+            width: 90%;
+            margin-right: 10%;
+            text-align: right;
+            color: white; }
+          .dashboard .side-bar .accomplishments button:focus {
             background-color: #5d84ef;
             width: 90%;
             margin-right: 10%;
@@ -436,6 +444,12 @@ select:focus {
             margin-right: 30%;
             text-align: right;
             color: white; }
+          .dashboard .side-bar .workouts button:focus {
+            background-color: #5d84ef;
+            width: 70%;
+            margin-right: 30%;
+            text-align: right;
+            color: white; }
           .dashboard .side-bar .workouts button i {
             margin-right: 5%; }
       .dashboard .side-bar .profile {
@@ -471,6 +485,12 @@ select:focus {
             margin-right: 30%;
             text-align: right;
             color: white; }
+          .dashboard .side-bar .profile button:focus {
+            background-color: #5d84ef;
+            width: 70%;
+            margin-right: 30%;
+            text-align: right;
+            color: white; }
           .dashboard .side-bar .profile button i {
             margin-right: 5%; }
       .dashboard .side-bar .logout {
@@ -489,14 +509,16 @@ select:focus {
         transition: margin 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
         transition: margin 0.2s ease-in, box-shadow 0.2s ease-in;
         transition: margin 0.2s ease-in, box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in; }
-        .dashboard .side-bar .logout:hover {
+        .dashboard .side-bar .logout:active {
           -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
                   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
-          margin-left: 5%; }
+          margin-left: 5%;
+          background-color: red;
+          color: white; }
     .dashboard .dash-content {
-      -webkit-box-flex: 5;
-          -ms-flex: 5;
-              flex: 5;
+      -webkit-box-flex: 4;
+          -ms-flex: 4;
+              flex: 4;
       text-align: center;
       background-color: #f4f7ff;
       height: 100vh; } }
