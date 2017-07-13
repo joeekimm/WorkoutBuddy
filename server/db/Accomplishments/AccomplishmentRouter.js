@@ -4,10 +4,9 @@ import AccomplishmentQueries from './AccomplishmentQueries';
 const router = express.Router();
 const Accomplishments = new AccomplishmentQueries();
 
-router.get('/getAccomplishments/:id', async (req, res) => {
+router.get('/getAccomplishments', async (req, res) => {
   try {
-    console.log('accomplishments id  ,', req.params);
-    const result = await Accomplishments.getAccomplishments(req.params.id);
+    const result = await Accomplishments.getAccomplishments();
     res.status(200).send(result);
   } catch (error) {
     console.log('Error in getAccomplishments route ,', error);

@@ -20,6 +20,7 @@ const output = './Client/Styles/css';
 const models = {
   City: db.City,
   User: db.User,
+  Accomplishment: db.Accomplishment,
 };
 
 gulp.task('sass', () => gulp.src(input)
@@ -68,7 +69,7 @@ gulp.task('sync', (cb) => {
 /** ******************************************************************/
 
 gulp.task('seed', (cb) => {
-  SequelizeFixtures.loadFiles(['./server/db/popularcity.json', './server/db/UserSeed.js'], models)
+  SequelizeFixtures.loadFiles(['./server/db/popularcity.json', './server/db/UserSeed.js', './server/db/AccomplishmentSeed.js'], models)
     .then(() => {
       cb();
     })
