@@ -1,8 +1,8 @@
 export default class UserQuerySelector {
 
-  postUser({ id }) {
-    return `INSERT INTO USERS (id)
-            VALUES ('${id}');`;
+  postUser({ id, picture }) {
+    return `INSERT INTO USERS (id, picture)
+            VALUES ('${id}', '${picture}');`;
   }
 
   getUser(id) {

@@ -520,12 +520,57 @@ a {
           background-color: red;
           color: white; }
     .dashboard .dash-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      position: relative;
       -webkit-box-flex: 4;
           -ms-flex: 4;
               flex: 4;
       text-align: center;
       background-color: #f4f7ff;
-      height: 100vh; } }
+      height: 100vh; }
+      .dashboard .dash-content .content-nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 10vh;
+        background-color: transparent; }
+        .dashboard .dash-content .content-nav img {
+          height: 50px;
+          width: 50px;
+          border-radius: 25px; }
+        .dashboard .dash-content .content-nav p {
+          margin: 0 2.5%; }
+      .dashboard .dash-content .content-holder {
+        border: 1px solid black;
+        width: 100%;
+        height: 100vh;
+        margin-top: 10vh;
+        overflow: auto; } }
 
 /*************************/
 /*******ANIMATIONS********/

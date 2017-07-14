@@ -4,8 +4,11 @@ export default class AccomplishmentQuerySelector {
             VALUES ('${goal}', CURDATE(), '${user_id}');`;
   }
   getAccomplishments() {
-    return `SELECT * FROM ACCOMPLISHMENTS 
-            ORDER BY ID DESC
+    return `SELECT Users.id, Users.firstName, Users.lastName, Users.picture, Accomplishments.goal, Accomplishments.date
+            FROM Users
+            LEFT JOIN Accomplishments
+            ON Users.id = Accomplishments.user_id
+            ORDER BY id DESC
             LIMIT 20`;
   }
  }

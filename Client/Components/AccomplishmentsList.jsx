@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import AccomplishmentEntry from '../Components/AccomplishmentEntry';
 
 
 class AccomplishmentsList extends Component {
@@ -12,7 +13,7 @@ class AccomplishmentsList extends Component {
   componentDidMount() {
     axios.get('/api/accomplishments/getAccomplishments')
       .then((res) => {
-        console.log(res);
+        this.setState({ accomplishments: res.data[0] });
       })
       .catch((err) => {
         console.log(err);
@@ -20,7 +21,10 @@ class AccomplishmentsList extends Component {
   }
   render() {
     return (
-      <div>accomplishments list</div>
+      <div className="content-holder">
+        accomplishments list
+        {this.state.accomplishments.map(accomplishment => <AccomplishmentEntry accomplishment={accomplishment} />)}
+      </div>
     );
   }
 }

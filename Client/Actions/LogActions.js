@@ -31,6 +31,7 @@ export const login = (history) => {
       localStorage.setItem('id_token', token);
       const body = {
         id: JSON.parse(localStorage.getItem('profile')).user_id,
+        picture: JSON.parse(localStorage.getItem('profile')).picture,
     }
       console.log('this is the body being sent' ,body);
       axios.post(`/api/users`, body)
