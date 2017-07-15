@@ -21,7 +21,6 @@ class Dashboard extends Component {
       <div className="dashboard">
         <NavBar logout={logout} history={history} />
         <div className="dash-content">
-          <ContentNav />
           <Route path="/dashboard/accomplishments" component={() => (<AccomplishmentsList />)} />
         </div>
       </div>

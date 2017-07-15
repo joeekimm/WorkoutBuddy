@@ -230,13 +230,13 @@ a {color: inherit; text-decoration: none;}
       .side-header {
         background-color: $secondary;
         width: 100%;
-        height: 10vh;
+        height: 15vh;
       }
       .matches {
         @include button($main-font, #5d84ef, white, 6px, 7vh, 80%);
         @include epic-shadow;
         position: absolute;
-        top: 7vh;
+        top: 17vh;
         transition: margin 0.2s ease-in, box-shadow 0.2s ease-in;
         &:active {
           @include big-button-hover;
@@ -339,19 +339,11 @@ a {color: inherit; text-decoration: none;}
           margin: 0 2.5%;
         }
       }
-      .content-holder {
-        border: 1px solid black;
-        width: 100%;
-        height: 100vh;
-        margin-top: 10vh;
-        overflow: auto;
-      }
     }
   }
 }
 
 /*************************/
-
 
   /*******ANIMATIONS********/
   @keyframes fade-in {
@@ -393,6 +385,34 @@ a {color: inherit; text-decoration: none;}
 
 
 /*************************/
+
+
+/*******ROUTED STYLES********/
+
+.accomplishments-holder {
+  @include holder;
+  .accomplishments-entry {
+    @include flex(row, space-between, center);
+    @include chip-border;
+    width: 60%;
+    height: 10vh;
+    margin: 2.5% auto;
+    border-radius: 4px;
+    background-color: white;
+    img {
+      height: 90%;
+      width: 10%;
+      margin-left: 2%;
+      border-radius: 1vw;
+    }
+  }
+}
+
+/*************************/
+
+
+
+
 
 
 

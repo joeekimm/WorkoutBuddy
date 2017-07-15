@@ -21,8 +21,8 @@ class AccomplishmentsList extends Component {
   }
   render() {
     return (
-      <div className="content-holder">
-        accomplishments list
+      <div className="accomplishments-holder">
+        Accomplishments
         {this.state.accomplishments.map(accomplishment => <AccomplishmentEntry accomplishment={accomplishment} />)}
       </div>
     );
