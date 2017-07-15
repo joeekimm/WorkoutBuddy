@@ -230,13 +230,13 @@ a {color: inherit; text-decoration: none;}
       .side-header {
         background-color: $secondary;
         width: 100%;
-        height: 10vh;
+        height: 15vh;
       }
       .matches {
         @include button($main-font, #5d84ef, white, 6px, 7vh, 80%);
         @include epic-shadow;
         position: absolute;
-        top: 7vh;
+        top: 17vh;
         transition: margin 0.2s ease-in, box-shadow 0.2s ease-in;
         &:active {
           @include big-button-hover;
@@ -317,16 +317,33 @@ a {color: inherit; text-decoration: none;}
       }
     }
     .dash-content {
+      @include flex(column, center, center);
+      position: relative;
       flex: 4;
       text-align: center;
       background-color: #f4f7ff;
       height: 100vh;
+      .content-nav {
+        @include flex(row, flex-end, center);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 10vh;
+        background-color: transparent;
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 25px;
+        }
+        p {
+          margin: 0 2.5%;
+        }
+      }
     }
   }
 }
 
 /*************************/
-
 
   /*******ANIMATIONS********/
   @keyframes fade-in {
@@ -368,6 +385,34 @@ a {color: inherit; text-decoration: none;}
 
 
 /*************************/
+
+
+/*******ROUTED STYLES********/
+
+.accomplishments-holder {
+  @include holder;
+  .accomplishments-entry {
+    @include flex(row, space-between, center);
+    @include chip-border;
+    width: 60%;
+    height: 10vh;
+    margin: 2.5% auto;
+    border-radius: 4px;
+    background-color: white;
+    img {
+      height: 90%;
+      width: 10%;
+      margin-left: 2%;
+      border-radius: 1vw;
+    }
+  }
+}
+
+/*************************/
+
+
+
+
 
 
 

@@ -15,8 +15,8 @@ for (let i = 0; i < 50; i++) {
   person.data.firstName = faker.name.firstName();
   person.data.lastName = faker.name.lastName();
   person.data.personalityType = 'introvert';
-  person.data.lat = boundingCoords(LALat, 34.0722, 4)
-  person.data.lng = boundingCoords(LALng, -118.500, 3)
+  person.data.lat = boundingCoords(LALat, 34.0722, 4);
+  person.data.lng = boundingCoords(LALng, -118.500, 3);
   UserData.push(person);
 }
 
@@ -25,11 +25,12 @@ const person = {
   data: {},
 };
 person.data.id = 'google-oauth2|117140262370862653672';
+person.data.picture = 'https://lh4.googleusercontent.com/-25c984-lUKQ/AAAAAAAAAAI/AAAAAAAAAIw/pRKuJq96JnE/photo.jpg';
 person.data.firstName = faker.name.firstName();
 person.data.lastName = faker.name.lastName();
 person.data.personalityType = 'introvert';
-person.data.lat = boundingCoords(LALat, 34.0722, 4)
-person.data.lng = boundingCoords(LALng, -118.500, 3)
+person.data.lat = boundingCoords(LALat, 34.0722, 4);
+person.data.lng = boundingCoords(LALng, -118.500, 3);
 UserData.push(person);
 
 
