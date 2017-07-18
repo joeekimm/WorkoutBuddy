@@ -6,7 +6,7 @@ const AccomplishmentEntry = (props) => {
     <div className="accomplishments-entry">
       <div className="badge">
         <img alt="profile" src={props.accomplishment.picture} />
-        @{props.accomplishment.firstName} {props.accomplishment.lastName}
+        <span>{props.accomplishment.firstName} {props.accomplishment.lastName}</span>
       </div>
       <p>{props.accomplishment.goal}</p>
     </div>

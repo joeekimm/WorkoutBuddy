@@ -12,6 +12,7 @@ body {
 button:focus {outline:0;}
 li:focus {outline:0;}
 select:focus {outline:0;}
+textarea:focus {outline:0;}
 a {color: inherit; text-decoration: none;}
 /***********************/
 
@@ -393,15 +394,26 @@ a {color: inherit; text-decoration: none;}
   @include holder;
     .post-feed {
       @include flex(column, center, center);
+      background-color: white;
       margin-top: 2.5%;
       width: 70%;
       margin-left: 15%;
       height: 25vh;
       border: 1px solid lightgray;
       border-radius: 4px;
+      textarea {
+        @include card-shadow;
+        width: 70%;
+        height: 10vh;
+        background-color: #f9fbfc;
+        border-radius: 5px;
+        border-style: none;
+        color: black;
+        font-size: 15px;
+      }
     }
     .accomplishments-entry {
-      @include flex(column, space-around, center);
+      @include flex(column, space-around, flex-start);
       @include card-shadow;
       width: 70%;
       height: auto;
@@ -409,13 +421,23 @@ a {color: inherit; text-decoration: none;}
       border-radius: 4px;
       background-color: white;
       .badge {
-
+        @include flex(row, flex-start, center);
+        width: 100%;
         img {
-          height: 90%;
-          width: 10%;
-          margin-left: 2%;
-          border-radius: 1vw;
+          height: 50px;
+          width: 50px;
+          margin: 1%;
+          border-radius: 25px;
         }
+        span {
+          font-weight: 100;
+          font-size: 100%;
+        }
+      }
+      p {
+        color: #777;
+        margin: 1%;
+        font-size: 85%;
       }
     }
 }
