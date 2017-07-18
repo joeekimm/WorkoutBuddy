@@ -22,7 +22,10 @@ class AccomplishmentsList extends Component {
   render() {
     return (
       <div className="accomplishments-holder">
-        Accomplishments
+        <form className="post-feed">
+          whats on your mind?
+          <input type="text" placeholder="tell us what you achieved?" />
+        </form>
         {this.state.accomplishments.map(accomplishment => <AccomplishmentEntry accomplishment={accomplishment} />)}
       </div>
     );
