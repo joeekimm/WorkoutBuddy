@@ -659,8 +659,8 @@ a {
             animation: fade-in 0.4s ease-in;
     background-color: white;
     margin-top: 2.5%;
-    width: 70%;
-    margin-left: 15%;
+    width: 60%;
+    margin-left: 20%;
     height: 25vh;
     border: 1px solid lightgray;
     border-radius: 4px; }
@@ -669,7 +669,7 @@ a {
     .accomplishments-holder .post-feed textarea {
       -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
               box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
-      width: 70%;
+      width: 60%;
       height: 10vh;
       background-color: #f9fbfc;
       border-radius: 5px;
@@ -705,7 +705,7 @@ a {
             box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
     -webkit-animation: fade-in 0.4s ease-in;
             animation: fade-in 0.4s ease-in;
-    width: 70%;
+    width: 60%;
     height: auto;
     margin: 1% auto;
     border-radius: 4px;
