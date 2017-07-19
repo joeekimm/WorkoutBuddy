@@ -8,7 +8,7 @@ export default class AccomplishmentQuerySelector {
             FROM Users
             LEFT JOIN Accomplishments
             ON Users.id = Accomplishments.user_id
-            ORDER BY id DESC
+            ORDER BY Accomplishments.id DESC
             LIMIT 20`;
   }
  }

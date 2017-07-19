@@ -54,6 +54,10 @@
   box-shadow: 0 17px 35px 0 rgba(0, 0, 0, 0.3), 0 10px 10px 0 rgba(0, 0, 0, 0.15);
 }
 
+@mixin card-shadow {
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+}
+
 @mixin separators($color:$secondary) {
   border-bottom: 3px solid $color;
 }
@@ -87,7 +91,7 @@
 }
 
 @mixin chip-border {
-  box-shadow: 0px 3px 0px rgba(0,0,0,0.15);
+  box-shadow: 0px 1.5px 0px rgba(0,0,0,0.15);
 }
 
 @mixin breakpoint($screen) {

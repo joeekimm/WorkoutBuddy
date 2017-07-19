@@ -3,12 +3,16 @@ const db = require('../');
 
 const Accomplishment = db.define('Accomplishment', {
   goal: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   date: {
     type: Sequelize.DATE,
     allowNull: false,
+  },
+  picture: {
+    type: Sequelize.TEXT,
+    allowNull: true,
   },
 },
   {

@@ -19,6 +19,9 @@ li:focus {
 select:focus {
   outline: 0; }
 
+textarea:focus {
+  outline: 0; }
+
 a {
   color: inherit;
   text-decoration: none; }
@@ -422,6 +425,15 @@ a {
 .fade-out {
   animation: fade-out .3s 1; }
 
+@keyframes fade-grow {
+  0% {
+    opacity: 0;
+    transform: scale(0.1); }
+  85% {
+    opacity: 1;
+    transform: scale(1.05); }
+  100% {
+    transform: scale(1); } }
 /*************************/
 /*******GOOGLE-MAPS********/
 .map-marker {
@@ -434,22 +446,73 @@ a {
   width: 100%;
   height: 100vh;
   overflow: auto; }
+  .accomplishments-holder .post-feed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: fade-in 0.4s ease-in;
+    background-color: white;
+    margin-top: 2.5%;
+    width: 70%;
+    margin-left: 15%;
+    height: 25vh;
+    border: 1px solid lightgray;
+    border-radius: 4px; }
+    .accomplishments-holder .post-feed h3 {
+      margin: 0; }
+    .accomplishments-holder .post-feed textarea {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
+      width: 70%;
+      height: 10vh;
+      background-color: #f9fbfc;
+      border-radius: 5px;
+      border-style: none;
+      color: black;
+      font-size: 15px; }
+    .accomplishments-holder .post-feed button {
+      font-family: "Poppins", sans-serif;
+      font-size: 100%;
+      background-color: #5d84ef;
+      color: white;
+      border-radius: 4px;
+      height: 18%;
+      width: 12%;
+      border-style: none;
+      position: absolute;
+      bottom: 1%;
+      right: .5%; }
   .accomplishments-holder .accomplishments-entry {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.15);
-    width: 60%;
-    height: 10vh;
-    margin: 2.5% auto;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
+    animation: fade-in 0.4s ease-in;
+    width: 70%;
+    height: auto;
+    margin: 1% auto;
     border-radius: 4px;
     background-color: white; }
-    .accomplishments-holder .accomplishments-entry img {
-      height: 90%;
-      width: 10%;
-      margin-left: 2%;
-      border-radius: 1vw; }
+    .accomplishments-holder .accomplishments-entry .badge {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%; }
+      .accomplishments-holder .accomplishments-entry .badge img {
+        height: 50px;
+        width: 50px;
+        margin: 1%;
+        border-radius: 25px; }
+      .accomplishments-holder .accomplishments-entry .badge span {
+        font-weight: 100;
+        font-size: 100%; }
+    .accomplishments-holder .accomplishments-entry p {
+      color: #777;
+      margin: 1%;
+      font-size: 85%; }
 
 /*************************/
 
