@@ -30,6 +30,10 @@ const Nav = ({ logout, history }) => (
       profile
     </button>
       <button>
+        <i className="fa fa-user-circle" aria-hidden="true" />
+        friends
+      </button>
+      <button>
         <i className="fa fa-comments-o" aria-hidden="true" />
       messages
     </button>
