@@ -16,6 +16,8 @@ server.use(express.static('Client'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 
+console.log('hi');
+
 server.use('/api', router);
 
 server.get('*', (req, res) => {

@@ -635,6 +635,50 @@ a {
   height: 30px; }
 
 /*************************/
+/*******REUSABLE COMPONENTS********/
+.interaction-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin-left: 5%;
+  border-top: 1px solid lightgray;
+  padding: 1%; }
+  .interaction-bar div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .interaction-bar div button {
+      font-family: "Poppins", sans-serif;
+      font-size: 100%;
+      background-color: transparent;
+      color: lightgray;
+      border-radius: 2px;
+      height: 1;
+      width: auto;
+      border-style: none; }
+
+/*************************/
 /*******ROUTED STYLES********/
 .accomplishments-holder {
   width: 100%;

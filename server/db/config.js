@@ -5,7 +5,7 @@ const User = require('./Users/UserModel');
 const Workout = require('./Workouts/WorkoutModel');
 const Message = require('./Messages/MessageModel');
 const Review = require('./Reviews/ReviewModel');
-// const Friend = require('./Friends/FriendModel');
+const Friend = require('./Friends/FriendModel');
 const BodyPart = require('./BodyParts/BodyPartModel');
 const Accomplishment = require('./Accomplishments/AccomplishmentModel');
 const City = require('./City/CityModel');
@@ -15,6 +15,9 @@ Workout.belongsTo(User, { foreignKey: { name: 'user_id' }, onDelete: 'CASCADE' }
 
 User.hasMany(Accomplishment, { foreignKey: { name: 'user_id' }, onDelete: 'CASCADE' });
 Accomplishment.belongsTo(User, { foreignKey: { name: 'user_id' }, onDelete: 'CASCADE' });
+
+User.hasMany(Friend, { foreignKey: { name: 'user_id' }, onDelete: 'CASCADE' });
+Friend.belongsTo(User, { foreignKey: { name: 'user_id' }, onDelete: 'CASCADE' });
 
 User.hasMany(Message, { as: 'sender_message', foreignKey: { name: 'sender_id' }, onDelete: 'CASCADE' });
 Message.belongsTo(User, { as: 'sent_message', foreignKey: { name: 'sender_id' }, onDelete: 'CASCADE' });
@@ -31,8 +34,8 @@ module.exports = {
   Workout,
   Message,
   Review,
-  // Friend,
+  Friend,
   City,
   BodyPart,
   Accomplishment,
-}
+};
