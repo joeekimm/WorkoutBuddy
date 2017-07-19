@@ -418,6 +418,9 @@ a {color: inherit; text-decoration: none;}
       height: 25vh;
       border: 1px solid lightgray;
       border-radius: 4px;
+      h3 {
+        margin: 0;
+      }
       textarea {
         @include card-shadow;
         width: 70%;
