@@ -409,6 +409,7 @@ a {color: inherit; text-decoration: none;}
   @include holder;
     .post-feed {
       @include flex(column, center, center);
+      position: relative;
       animation: fade-in 0.4s ease-in;
       background-color: white;
       margin-top: 2.5%;
@@ -426,6 +427,12 @@ a {color: inherit; text-decoration: none;}
         border-style: none;
         color: black;
         font-size: 15px;
+      }
+      button {
+        @include button($main-font, $main, white, 4px, 18%, 12%);
+        position: absolute;
+        bottom: 1%;
+        right: .5%;
       }
     }
     .accomplishments-entry {

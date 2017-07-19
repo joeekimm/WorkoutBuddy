@@ -53,7 +53,7 @@ class AccomplishmentsList extends Component {
         <form onSubmit={(e) => { this.postAccomplishment(e); }} className="post-feed">
           <h3>what'd you accomplish today?</h3>
           <textarea onChange={(e) => { this.handleTextChange(e); }} type="text" placeholder="tell us what you achieved?" />
-          <button type="submit" />
+          <button type="submit">POST</button>
         </form>
         {this.state.accomplishments.map(accomplishment => <AccomplishmentEntry accomplishment={accomplishment} />)}
       </div>
