@@ -20,7 +20,7 @@ class InteractionBar extends Component {
         </div>
         <div>
           <i className="fa fa-comments-o" aria-hidden="true" />
-          <button>Send Message</button>
+          <button>Message</button>
         </div>
       </div>
     );
