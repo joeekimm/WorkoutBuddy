@@ -441,6 +441,33 @@ a {
   height: 30px; }
 
 /*************************/
+/*******REUSABLE COMPONENTS********/
+.interaction-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 95%;
+  margin-left: 2.5%;
+  border-top: 1px solid lightgray;
+  padding: 1%; }
+  .interaction-bar div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%; }
+    .interaction-bar div button {
+      font-family: "Poppins", sans-serif;
+      font-size: 100%;
+      background-color: transparent;
+      color: lightgray;
+      border-radius: 2px;
+      height: 1;
+      width: auto;
+      border-style: none; }
+
+/*************************/
 /*******ROUTED STYLES********/
 .accomplishments-holder {
   width: 100%;
@@ -449,23 +476,27 @@ a {
   .accomplishments-holder .post-feed {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
     animation: fade-in 0.4s ease-in;
     background-color: white;
     margin-top: 2.5%;
-    width: 70%;
-    margin-left: 15%;
+    width: 60%;
+    margin-left: 20%;
     height: 25vh;
     border: 1px solid lightgray;
     border-radius: 4px; }
     .accomplishments-holder .post-feed h3 {
-      margin: 0; }
+      width: 100%;
+      margin: 0;
+      background-color: lightgray;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      color: white; }
     .accomplishments-holder .post-feed textarea {
       box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
-      width: 70%;
-      height: 10vh;
+      width: 60%;
+      height: 13vh;
       background-color: #f9fbfc;
       border-radius: 5px;
       border-style: none;
@@ -480,9 +511,10 @@ a {
       height: 18%;
       width: 12%;
       border-style: none;
-      position: absolute;
       bottom: 1%;
-      right: .5%; }
+      right: .5%;
+      margin-left: 85%;
+      margin-bottom: .25%; }
   .accomplishments-holder .accomplishments-entry {
     display: flex;
     flex-direction: column;
@@ -490,8 +522,9 @@ a {
     align-items: flex-start;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
     animation: fade-in 0.4s ease-in;
-    width: 70%;
+    width: 60%;
     height: auto;
+    min-height: 20vh;
     margin: 1% auto;
     border-radius: 4px;
     background-color: white; }

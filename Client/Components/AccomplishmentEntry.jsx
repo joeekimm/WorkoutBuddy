@@ -1,4 +1,5 @@
 import React from 'react';
+import InteractionBar from '../Containers/InteractionBar';
 
 const AccomplishmentEntry = (props) => {
   console.log(props);
@@ -9,6 +10,7 @@ const AccomplishmentEntry = (props) => {
         <span>{props.accomplishment.firstName} {props.accomplishment.lastName}</span>
       </div>
       <p>{props.accomplishment.goal}</p>
+      <InteractionBar />
     </div>
   );
 };

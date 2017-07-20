@@ -53,6 +53,7 @@ gulp.task('sync', (cb) => {
   database.query('SET FOREIGN_KEY_CHECKS=0')
   // database.queryAsync('SET FOREIGN_KEY_CHECKS=0')
     .then(() => { db.User.sync({ force: true }); })
+    .then(() => { db.Friend.sync({ force: true }); })
     .then(() => { db.Accomplishment.sync({ force: true }); })
     .then(() => { db.Workout.sync({ force: true }); })
     .then(() => { db.Message.sync({ force: true }); })
