@@ -476,9 +476,8 @@ a {
   .accomplishments-holder .post-feed {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
     animation: fade-in 0.4s ease-in;
     background-color: white;
     margin-top: 2.5%;
@@ -488,11 +487,16 @@ a {
     border: 1px solid lightgray;
     border-radius: 4px; }
     .accomplishments-holder .post-feed h3 {
-      margin: 0; }
+      width: 100%;
+      margin: 0;
+      background-color: lightgray;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      color: white; }
     .accomplishments-holder .post-feed textarea {
       box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
       width: 60%;
-      height: 10vh;
+      height: 13vh;
       background-color: #f9fbfc;
       border-radius: 5px;
       border-style: none;
@@ -507,9 +511,10 @@ a {
       height: 18%;
       width: 12%;
       border-style: none;
-      position: absolute;
       bottom: 1%;
-      right: .5%; }
+      right: .5%;
+      margin-left: 85%;
+      margin-bottom: .25%; }
   .accomplishments-holder .accomplishments-entry {
     display: flex;
     flex-direction: column;
