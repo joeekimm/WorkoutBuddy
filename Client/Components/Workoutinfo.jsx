@@ -66,22 +66,6 @@ export default class Workoutinfo extends Component {
         console.log(q2length);
         console.log(q3length);
 
-    const styles = {
-      textbox: {
-        margin: 'auto',
-        width: '80%',
-        padding: '10px'
-      },
-      button: {
-        margin: 'auto',
-        display: 'block'
-      },
-      text: {
-        margin: 'auto',
-        width: '50%'
-      }
-    }
-
     return(
       <div className='workout-form-wrapper'>
         <Form className='workout-input' onSubmit={(event) => this.handleSubmit(event)}>
