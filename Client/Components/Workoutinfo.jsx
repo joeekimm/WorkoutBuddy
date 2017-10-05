@@ -66,14 +66,14 @@ export default class Workoutinfo extends Component {
         console.log(q2length);
         console.log(q3length);
 
-    return(
+    return (
       <div className='workout-form-wrapper'>
         <Form className='workout-input' onSubmit={(event) => this.handleSubmit(event)}>
           <Form.TextArea onChange={(event) => this.handleText1Change(event)} placeholder='I see myself...' label='What do you see yourself doing in your dream job?' />
           <Form.TextArea onChange={(event) => this.handleText2Change(event)} placeholder='My ideal place would be...' label='Describe the type of place you would choose to live in.' />
           <Form.TextArea onChange={(event) => this.handleText3Change(event)} placeholder='In my free time I like to...' label='What do you do on your free time / what are your hobbies?' />
-          <Button className='workout-form-button' type='submit'>Submit</Button>
-          {q1length + q2length + q3length < 100 ? <text>You have {103 - q1length - q2length - q3length} words left!</text> : <text>You hit 100 words!</text>}
+          <Button disabled={q1length + q2length + q3length < 103} className='workout-form-button' type='submit'>Submit</Button>
+          {q1length + q2length + q3length < 103 ? <text>You have {103 - q1length - q2length - q3length} words left!</text> : <text>You hit 100 words!</text>}
         </Form>
       </div>
     );

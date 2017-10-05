@@ -34,7 +34,7 @@ gulp.task('sass', () => gulp.src(input)
 gulp.task('watch', () => {
   // BrowserSync settings
   browserSync.init({
-    proxy: 'http://localhost:5000',
+    proxy: 'http://localhost:3000',
     files: './Client/Styles/css/main.css',
   });
 

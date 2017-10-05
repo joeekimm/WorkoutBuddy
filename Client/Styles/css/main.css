@@ -635,6 +635,21 @@ a {
   height: 30px; }
 
 /*************************/
+/********WORKOUT-FORM*******/
+.workout-form-wrapper .workout-input {
+  margin: auto;
+  width: 80%;
+  padding: 10px; }
+
+.workout-form-wrapper .workout-form-button {
+  margin: auto;
+  display: block; }
+
+.workout-form-wrapper text {
+  margin: 'auto';
+  width: 50%; }
+
+/*************************/
 /*******REUSABLE COMPONENTS********/
 .interaction-bar {
   display: -webkit-box;
